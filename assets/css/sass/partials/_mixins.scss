@@ -1,0 +1,144 @@
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+// mixins
+// ----------------------------------------------------------------------------------------------------------------
+
+@mixin transition($directives) {
+  transition: $directives;
+  -moz-transition: $directives;
+  -webkit-transition: $directives;
+  -o-transition: $directives;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+// breakpoint mixins
+// ----------------------------------------------------------------------------------------------------------------
+
+@mixin respond-to($media) {
+  @if $media == full-width {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $media == tablet-wide {
+    @media (min-width: 768px) and (max-width: 979px) {
+      @content;
+    }
+  }
+  @if $media == tablet-portrait {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $media == mobile {
+    @media (max-width: 567px) {
+      @content;
+    }
+  }
+}
+
+@mixin placeholder($color) {
+  input::-webkit-input-placeholder {
+    color: $color !important;
+    opacity: 1;
+  }
+  input::-moz-placeholder {
+    color: $color !important;
+    opacity: 1;
+  }
+  input:-ms-input-placeholder {
+    color: $color !important;
+    opacity: 1;
+  }
+  textarea::-webkit-input-placeholder {
+    color: $color !important;
+    opacity: 1;
+  }
+  textarea::-moz-placeholder {
+    color: $color !important;
+    opacity: 1;
+  }
+  textarea:-ms-input-placeholder {
+    color: $color !important;
+    opacity: 1;
+  }
+}
+
+@mixin border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+@mixin scaleY($scale) {
+  @include transform(scaleY($scale));
+}
+
+@mixin text-size($size, $standard, $tablet, $mobile, $line-height) {
+  font-size: $size - $standard;
+  line-height: $line-height - $standard;
+  @include respond-to(full-width) {
+    font-size: $size;
+    line-height: $line-height;
+  }
+
+  @include respond-to(tablet-portrait) {
+    font-size: $size - $tablet;
+    line-height: $line-height - $tablet;
+  }
+
+  @include respond-to(mobile) {
+    font-size: $size - $mobile;
+    line-height: $line-height - $mobile;
+  }
+}
+
+@mixin line-height($line-height, $standard, $tablet, $mobile) {
+  line-height: $line-height - $standard;
+  @include respond-to(full-width) {
+    line-height: $line-height;
+  }
+
+  @include respond-to(tablet-portrait) {
+    line-height: $line-height - $tablet;
+  }
+
+  @include respond-to(mobile) {
+    line-height: $line-height - $mobile;
+  }
+}

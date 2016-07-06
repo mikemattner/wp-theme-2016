@@ -1,0 +1,265 @@
+// ----------------------------------------------------------------------------------------------------------------
+// default formating
+// ----------------------------------------------------------------------------------------------------------------
+
+html, body {
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  font-family: $serif-font;
+  color: $textColor;
+  font-size: $defaultFontSize;
+  line-height: $defaultLineHeight;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#content {
+    padding: 0;
+    position: relative;
+}
+#content hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 1.5em 0;
+    padding: 0;
+    border: none;
+    border-top: 1px solid $borderColor;
+}
+#page_wrapper {
+    padding: 0;
+    position: relative;
+}
+#page_wrapper.single,
+#page_wrapper.home {
+      padding: 100px 0 0;
+      position: relative;
+  }
+#page_header {
+    text-align: center;
+    padding: 140px 0 50px;
+    background: $darkBlue;
+    overflow: hidden;
+}
+  #page_header p {
+      font-family: $sans-serif-font;
+      font-size: .875em;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      color: $headerTextColor;
+  }
+  #page_header h1.pagetitle {
+      font-family: $sans-serif-font;
+      font-weight: 300;
+      color: $white;
+  }
+
+.wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.fade-content {
+  opacity: 0;
+  -webkit-animation: fadein .475s ease-in-out;
+     -moz-animation: fadein .475s ease-in-out;
+          animation: fadein .475s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+       -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+.fade-in-up {
+  opacity: 0;
+  -webkit-animation: fadeInUp .75s ease-in-out;
+     -moz-animation: fadeInUp .75s ease-in-out;
+          animation: fadeInUp .75s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+       -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $darkBlue;
+  text-transform: uppercase;
+}
+
+h1 {
+  @include text-size(42px, 4, 9, 15, 54px);
+  //margin-bottom: $defaultLineHeight;
+}
+
+h2 {
+  @include text-size(36px, 3, 7, 12, 48px);
+  //margin-bottom: $defaultLineHeight;
+}
+
+h3 {
+  @include text-size(24px, 2, 4, 6, 36px);
+  //margin-bottom: $defaultLineHeight;
+}
+
+h4 {
+  @include text-size(18px, 1, 2, 3, 32px);
+  //margin-bottom: $defaultLineHeight;
+}
+
+h5 {
+  @include text-size(18px, 1, 2, 3, 32px);
+  //margin-bottom: $defaultLineHeight;
+}
+
+h6 {
+  @include text-size(18px, 1, 2, 3, 32px);
+  //margin-bottom: $defaultLineHeight;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  font-size: 65%;
+  top: -0.5em;
+}
+
+input,
+textarea,
+button {
+    -webkit-appearance: none;
+    outline: none;
+}
+
+/*
+ol, ul {
+  //margin-left: 48px;
+  //margin-bottom: $defaultLineHeight;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  //margin-left: $defaultLineHeight;
+  //margin-bottom: 0px;
+}
+
+ol {
+  list-style: decimal outside none;
+}
+
+ul {
+  list-style: disc outside none;
+}
+
+cite, q, em, var {
+  font-style: italic;
+}
+
+dl {
+  margin-bottom: $defaultLineHeight;
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin-left: $defaultLineHeight / 2;
+  }
+}
+
+dl:last-child {
+  margin-bottom: 0px;
+}
+
+address {
+  font-style: italic;
+  margin-bottom: $defaultLineHeight;
+}
+
+address:last-child {
+  margin-bottom: 0px;
+}
+
+abbr, acronym {
+  cursor: help;
+  border-bottom: 1px dotted #000000;
+}
+
+kbd, tt {
+  border: 1px solid $borderColor;
+  font-family: "Courier New", monospace !important;
+  padding: 5px;
+  @include text-size(16px, 1, 2, 3, 28px);
+}*/
+
+/* @media {  
+} screen and (min-width: 600px) */
+@media screen and (min-width: 37.5em) { 
+  body {
+      font-size: 100%
+  }
+}
+
+/* @media { 
+} screen and (min-width: 768px) */
+@media screen and (min-width: 48em) { 
+  body {
+      font-size: 110%
+  }
+}
+
+/* @media { 
+} screen and (min-width: 960px) */
+@media screen and (min-width: 60em) { 
+  body {
+      font-size: 110%
+  }
+}
+
+/* @media {   
+} screen and (min-width: 984px) */
+@media screen and (min-width: 61.5em) { 
+  body {
+      font-size: 110%
+  }
+}
+
+/* @media {   
+} screen and (min-width: 1080px) */
+@media screen and (min-width: 67.5em) { 
+  body {
+      font-size: 110%
+  }
+}
+
+/* @media {media_subcode : 1
+} screen and (min-width: 1200px) */
+@media screen and (min-width: 75em) { 
+  body {
+      font-size: 115%
+  }
+}
+
+/* @media { 
+} screen and (min-width: 1392px) */
+@media screen and (min-width: 87em) { 
+  body {
+      font-size: 120%
+  }
+}
+
+/* @media { 
+} screen and (min-width: 1680px) */
+@media screen and (min-width: 105em) { 
+  body {
+      font-size: 120%
+  }
+}

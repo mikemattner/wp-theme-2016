@@ -1,0 +1,84 @@
+/* $[Search Box] ^search, ^tags ==================================================================== */
+#archive {
+    padding: 0;
+    position: relative;
+    z-index: 9000;
+}
+.search-box {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+    background: $darkBlue;
+}
+input.searchform {
+    float: left;
+    font-size: 1.25em;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 .5em;
+    margin: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid lighten($darkBlue,10%);
+    width: 82%;
+    color: lighten($darkBlue,10%);
+    font-family: $sans-serif-font;
+    font-weight: 100;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+input.searchform:focus,
+#searchform input.sffocus {
+    border-bottom: 1px solid lighten($darkBlue,30%);
+    color: $white;
+    -webkit-animation: shadowOutLight .225s 1 ease-in-out;
+       -moz-animation: shadowOutLight .225s 1 ease-in-out;
+            animation: shadowOutLight .225s 1 ease-in-out;
+}
+.searchme {
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.25em;
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: 15%;
+    background: none;
+    color: lighten($darkBlue,10%);
+    border: none;
+    float: right;
+    font-family: $sans-serif-font;
+    -webkit-transition: background-color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-out;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-transform: scale(1,1);
+            transform: scale(1,1);
+    -webkit-transition: all 0.25s ease-in-out;
+       -moz-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+}
+.searchme:hover,
+.searchme:active {
+    background-color: lighten($darkBlue,10%);
+    color: $white;
+    -webkit-transform: scale(1.05,1.05);
+            transform: scale(1.05,1.05);
+}
+.searchme:active {
+    background-color: $orange;
+    -webkit-transform: scale(0.975,0.975);
+            transform: scale(0.975,0.975);
+    -webkit-animation: shadowOutLight .225s 1 ease-in-out;
+       -moz-animation: shadowOutLight .225s 1 ease-in-out;
+            animation: shadowOutLight .225s 1 ease-in-out;
+}
+/*END Searchbox---------------*/

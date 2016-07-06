@@ -1,0 +1,31 @@
+// Mixins,variables,resets,basics,typography
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/reset";
+@import "partials/fluid-media";
+@import "partials/typography";
+@import "partials/animations";
+
+// lity, highlight
+@import "vendor/lity";
+@import "vendor/highlight";
+
+// grid,defaults
+@import "partials/grid";
+@import "partials/defaults";
+
+// header,footer
+@import "partials/header";
+@import "partials/footer";
+
+// blog
+@import "partials/post_types";
+@import "partials/gallery";
+@import "partials/search";
+@import "partials/comments_forms";
+@import "partials/blog_helpers";
+@import "partials/section_headers";
+
+// portfolio
+@import "modules/portfolio"

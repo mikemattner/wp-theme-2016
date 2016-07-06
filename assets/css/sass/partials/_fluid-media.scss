@@ -1,0 +1,21 @@
+/*------------------------------------
+*
+*  Simple fluid media
+*
+------------------------------------*/
+figure {
+    position: relative
+}
+img,
+object,
+embed,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}

@@ -1,0 +1,137 @@
+/*------------------------------------
+*
+*   Typography
+*
+------------------------------------*/
+.normal,
+h4,
+h3 {
+    font-size: 1em;
+    /*line-height: 1.5em;*/
+}
+.large,
+h2 {
+    font-size: 1.375em;
+    /*line-height: 1.3846153846153846em;*/
+}
+.huge,
+h1 {
+    font-size: 2.625em;
+    /*line-height: 1.1428571428571428em;*/
+}
+.small,
+small,
+code,
+#copyright p,
+.post_reference {
+    font-size: 0.8125em;
+    /*line-height: 1.3846153846153846em;*/
+}
+input,
+textarea,
+button,
+select {
+    font-family: $sans-serif-font;
+}
+pre,
+code {
+    font-family: $source-code-font;
+}
+p,
+blockquote,
+.post_reference {
+    margin: 0 0 1.5em 0;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+/*h2 {
+    margin-bottom: 0.46153846153846156em
+}
+h3 {
+    margin: 3em 0 1.5em
+}*/
+/* Selection colours (easy to forget) */
+::selection {
+    background: rgba($orange,1.0);
+    color: $white;
+}
+::-moz-selection {
+    background: rgba($orange,1.0);
+    color: $white;
+}
+img::selection {
+    background: transparent
+}
+img::-moz-selection {
+    background: transparent
+}
+body {
+    -webkit-tap-highlight-color: rgba($orange,1.0);
+}
+html,
+body {
+    font-weight: 100;
+    color: $textColor;
+    
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $headingColor;
+    font-weight: 700;
+    font-family: $sans-serif-font;
+    line-height:1;
+    letter-spacing: .06em;
+}
+strong {
+    font-weight: 700
+}
+body {
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures, contextual;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt","lnum";
+    -ms-font-feature-settings: "kern", "liga", "clig", "alt","lnum";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt","lnum";
+    font-feature-settings: "kern", "liga", "clig", "calt","lnum";
+}
+/* $[Universal Presets] ^not_reset_related ====================================================================*/ 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dd,
+p,
+figure,
+pre,
+table,
+fieldset,
+hr {
+    margin-bottom: 1.5rem
+}
+/* $[General Elements] ^not_reset_related ==================================================================== */
+
+/* $[Universal Links] ^not_reset_related ==================================================================== */
+a:link,
+a:visited,
+a:active {
+    color: $linkColor;
+    text-decoration: none;
+}
+a:hover {
+    color: $orange;
+    text-decoration: underline;
+}
+a {
+    @include transition(all 0.2s ease-out);
+}

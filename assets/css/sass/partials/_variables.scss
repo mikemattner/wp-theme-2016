@@ -1,0 +1,48 @@
+// ----------------------------------------------------------------------------------------------------------------
+// Colors
+// ----------------------------------------------------------------------------------------------------------------
+$darkBlue: rgba(39,47,52,1.0);
+$orange: rgba(255,88,1,1.0);
+$lightGray: lighten($darkBlue, 80%);
+$darkGray: lighten($darkBlue, 50%);
+$white: rgba(255,255,255,1.0);
+$black: rgba(0,0,0,1.0);
+$borderColor: lighten($darkBlue, 80%);
+$darkBorder: lighten($darkBlue, 65%);
+$metaGray: lighten($darkBlue, 50%);
+
+// ----------------------------------------------------------------------------------------------------------------
+// Typography
+// ----------------------------------------------------------------------------------------------------------------
+$sans-serif-font: "jaf-facitweb", Helvetica, sans-serif;
+$serif-font: "adelle",serif;
+$source-code-font: Menlo, Monaco, monospace;
+$textColor: rgba(103,113,113,1.0);
+$headingColor: $darkBlue;
+$defaultFontSize: 18px;
+$defaultLineHeight: 1.65;
+
+// ----------------------------------------------------------------------------------------------------------------
+// Links
+// ----------------------------------------------------------------------------------------------------------------
+$linkColor: lighten($darkBlue,40%);
+$linkColorDark: darken($linkColor, 10%);
+$linkColorLight: lighten($linkColor, 10%);
+$hoverColor: $darkBlue;
+
+// ----------------------------------------------------------------------------------------------------------------
+// Header
+// ----------------------------------------------------------------------------------------------------------------
+$headerBaseTextColor: lighten($darkBlue, 50%);
+$headerTextColor: rgba($headerBaseTextColor,0.75);
+
+// ----------------------------------------------------------------------------------------------------------------
+// Footer
+// ----------------------------------------------------------------------------------------------------------------
+$footerBackground: darken($darkBlue,5%);
+$footerBaseTextColor: lighten($footerBackground, 20%);
+$footerTextColor: rgba($footerBaseTextColor,0.75);
+$footerHeaderColor: rgba($footerBaseTextColor,0.95);
+$footerBaseLine: lighten($footerBackground, 10%);
+$footerBaseLineColor: rgba($footerBaseLine,0.75);
+$socialLinkHoverBG: darken($darkBlue,10%);

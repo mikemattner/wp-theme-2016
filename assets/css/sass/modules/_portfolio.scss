@@ -1,0 +1,157 @@
+/*PORTFOLIO------------*/
+/* $[Project Images Styles] ^article, ^images, ^menu ==================================================================== */
+
+#project-archive {
+  margin: 0 auto;
+  padding:  0;
+}
+article.project {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    @include border-box;
+}
+article.project section.thumb {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+article.project img {
+    margin: 0 auto;
+}
+article.project header {
+      text-align: center;
+      color: $white;
+      background: rgba(darken($darkBlue,10%),0.925);
+}
+article.project .projects-title {
+      padding: 1rem 0;
+}
+article.project h2 {
+    font-size: 1em;
+    margin: 1rem 0;
+    color: $headerTextColor;
+    font-family: $sans-serif-font;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+}
+article.project h2:after {
+      width: 10%;
+      margin-left: 45%;
+      margin-right: 45%;
+      border-top: 1px solid $orange;
+      display: block;
+      content: "";
+      margin-top: 1rem;
+}
+article.project header p {
+    margin: 1rem 0;
+    line-height: 1;
+    color: $headerTextColor;
+    font-size: .675em;
+    font-family: $sans-serif-font;
+    font-weight: 100;
+    letter-spacing: .06em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+article.project header .permalink {
+      text-indent: -9999px;
+      opacity: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+}
+
+/* @media {  
+} screen and (min-width: 600px) */
+@media screen and (min-width: 37.5em) { 
+      article.project {
+          max-width: 100%;
+          width: 50%;
+          float: left;
+      }
+      article.project header {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+      }      
+      article.project header:hover {
+            opacity: 1.0;
+            .projects-title {
+                opacity: 1.0;
+                -webkit-transform: translateY(-50%) translateX(-50%);
+                transform: translateY(-50%) translateX(-50%);
+            }
+      }
+      article.project .projects-title {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            -webkit-transition: all 0.75s ease;
+            -moz-transition: all 0.75s ease;
+            transition: all 0.75s ease;
+            -webkit-transform: translateY(0%) translateX(-50%);
+                transform: translateY(0%) translateX(-50%);
+      }
+      article.project img {
+          -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+      }
+      article.project:hover img {
+
+      }
+      article.project h2 {
+          font-size: 1.25em;
+          margin: 1rem 0;
+      }
+      article.project h2:after {
+          width: 10%;
+          margin-left: 45%;
+          margin-right: 45%;
+          border-top: 1px solid $orange;
+          display: block;
+          content: "";
+          margin-top: 1rem;
+      }
+      article.project header p {
+          margin: 1rem 0;
+          line-height: 1;
+          color: $headerTextColor;
+      }
+}
+
+/* @media { 
+} screen and (min-width: 960px) */
+@media screen and (min-width: 60em) { 
+  
+}
+
+/* @media {media_subcode : 1
+} screen and (min-width: 1040px) */
+@media screen and (min-width: 65em) { 
+  article.project {
+      max-width: 100%;
+      width: 33.33%;
+      float: left;
+  }
+}

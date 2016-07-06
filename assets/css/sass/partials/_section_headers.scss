@@ -1,0 +1,241 @@
+.archives,
+.archives-master,
+.archives-search,
+.about-header {
+}
+
+.pagetitle {
+    color: $headingColor;
+}
+#page_header {
+   /*background: $darkBlue url(../images/mountains.jpg) no-repeat top center;
+    border-bottom: 1px solid $borderColor;*/
+}
+
+.fourohfour {
+    font-size: 18em;
+    color: #ededed;
+    font-weight:700;
+    line-height: 1;
+    color: $white;
+}
+#page_header.four {
+    padding: 7.5em 0 2.5em;
+    text-align: center;
+    font-size: 1em;
+    background: $darkBlue;
+}
+
+#page_header.about-header {
+    padding: 7.5em 0 2.5em;
+    text-align: center;
+    font-size: 1em;
+    background: $darkBlue;
+}
+#page_header.about-header p {
+      font-family: $sans-serif-font;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      color: $white;
+  }
+  #page_header.about-header h1.pagetitle {
+      font-weight: 100;
+      color: $white;
+  }
+  #page_header.about-header h1:after {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-top: 1px solid $orange;
+    display: block;
+    content: "";
+    margin-top: 2.25rem;
+}
+#page_header.about-header a {
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  #page_header.about-header a:hover {
+      text-decoration: none;
+      border-bottom: 1px solid $orange;
+  }
+
+#page_header.about-header a.btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: $sans-serif-font;
+    font-weight: 100;
+    letter-spacing: .06em;
+    margin: 1em auto 0;
+}
+#page_header.about-header a.btn:link,
+#page_header.about-header a.btn:visited,
+#page_header.about-header a.btn:active {
+    -webkit-transition: background-color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    display: inline-block;
+    text-align: center;
+    color: $textColor;
+    line-height: 2;
+    text-align: center;
+    border: 1px solid rgba($white, 0.15);
+    padding: 1em 2em;
+    text-decoration: none;
+}
+#page_header.about-header a.btn:hover {
+    color: $darkBlue;
+    background: $white;
+    border: 1px solid $white;
+    border-color: $white;
+    text-decoration: none;
+}
+#page_header.about-header a.btn:active {
+    color: $darkBlue;
+    background: $white;
+    border: 1px solid $white;
+    border-color: $white;
+    text-decoration: none;
+    -webkit-transform: scale(0.975,0.975);
+            transform: scale(0.975,0.975);
+    -webkit-animation: shadowOutLight .225s 1 ease-in-out;
+       -moz-animation: shadowOutLight .225s 1 ease-in-out;
+            animation: shadowOutLight .225s 1 ease-in-out;
+}
+
+#page_header.projects-header {
+    padding: 7.5em 0 2.5em;
+    text-align: center;
+    font-size: 1em;
+    background: $darkBlue;
+}
+#page_header.projects-header p {
+      font-family: $sans-serif-font;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      color: $white;
+  }
+  #page_header.projects-header h1.pagetitle {
+      font-weight: 100;
+      color: $white;
+      line-height: 1;
+      span{
+        display: block;
+        font-size: .25em;
+        color: lighten($darkBlue,20%);
+      }
+  }
+  #page_header.projects-header h1:after {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-top: 1px solid $orange;
+    display: block;
+    content: "";
+    margin-top: 2.25rem;
+}
+#page_header.projects-header a {
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  #page_header.projects-header a:hover {
+      text-decoration: none;
+      border-bottom: 1px solid $orange;
+  }
+
+#page_header.projects-header a.btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: $sans-serif-font;
+    font-weight: 100;
+    letter-spacing: .06em;
+    margin: 1em auto 0;
+}
+#page_header.projects-header a.btn:link,
+#page_header.projects-header a.btn:visited,
+#page_header.projects-header a.btn:active {
+    -webkit-transition: background-color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    display: inline-block;
+    text-align: center;
+    color: $textColor;
+    line-height: 2;
+    text-align: center;
+    border: 1px solid rgba($white, 0.15);
+    padding: 1em 2em;
+    text-decoration: none;
+}
+#page_header.projects-header a.btn:hover {
+    color: $darkBlue;
+    background: $white;
+    border: 1px solid $white;
+    border-color: $white;
+    text-decoration: none;
+}
+#page_header.projects-header a.btn:active {
+    color: $darkBlue;
+    background: $white;
+    border: 1px solid $white;
+    border-color: $white;
+    text-decoration: none;
+    -webkit-transform: scale(0.975,0.975);
+            transform: scale(0.975,0.975);
+    -webkit-animation: shadowOutLight .225s 1 ease-in-out;
+       -moz-animation: shadowOutLight .225s 1 ease-in-out;
+            animation: shadowOutLight .225s 1 ease-in-out;
+}
+
+
+#page_header.entry-header p {
+      font-family: $sans-serif-font;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: $headerTextColor;
+      font-size:  .65em;
+  }
+  #page_header.entry-header h2.pagetitle,#page_header.entry-header h1.pagetitle {
+      max-width: 768px;
+      font-weight: 100;
+      color: $white;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #page_header.entry-header h2:after, #page_header.entry-header h1:after {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-top: 1px solid $orange; /*rgba(255,255,255,0.15)*/
+    display: block;
+    content: "";
+    margin-top: 1.5rem;
+}
+
+/* @media {  
+} screen and (min-width: 600px) */
+@media screen and (min-width: 37.5em) { 
+  #page_header.about-header h1.pagetitle {
+      font-size: 3em;
+  }
+  #page_header.about-header p {
+      font-size: 1em;
+  }
+  #page_header.projects-header {
+      padding: 13.5em 0 7.5em;
+      text-align: center;
+      font-size: 1em;
+      background: $darkBlue;
+  }
+  #page_header.projects-header h1.pagetitle {
+      font-size: 3.5em;
+  }
+  #page_header.projects-header p {
+      font-size: 1em;
+  }
+
+}
