@@ -8,7 +8,7 @@ get_header(); ?>
 
       <div id="page_header" class="archives-master">
       	<div class="wrapper">
-                <div class="fade-in-up">
+          <div class="fade-in-up">
            <h1 class="pagetitle">Archives</h1>
            <div class="clearfix">
             <section>
@@ -20,10 +20,10 @@ get_header(); ?>
          </div>
         </div>
       </div>
-			<article class="clearfix">
+			<?php /*<article class="clearfix">
                 <?php smart_archives(); ?>
 			</article>
-      <?php /*<hr />
+      <hr />*/ ?>
       <article>
         <div class="wrapper tag_list clearfix">
           <section>
@@ -33,7 +33,7 @@ get_header(); ?>
             <?php get_my_tags(64); ?>
           </section>
         </div>
-      </article>*/ ?>
+      </article>
 <?php endif; ?>
 <?php get_footer(); ?>
 

@@ -7,7 +7,7 @@ get_header(); ?>
             <div class="wrapper">
                 <div class="fade-in-up">
                   <h1 class="pagetitle">Hello, I'm Mike.</h1>
-                  <p>I'm a designer and developer currently working at <a href="http://aislerocket.com" rel="nofollow">Aisle Rocket Studios</a> as an Associate Creative Director.  <a href="mailto:hello@mikemattner.com">Get in touch</a> and say hello or ask a question.</p>
+                  <p>I'm a designer and developer currently working at <a href="http://aislerocket.com" rel="nofollow">Aisle Rocket Studios</a> as an Associate Creative Director.  <a href="mailto:hello@mikemattner.com">Get in touch</a> and say hello.</p>
                   <p><a href="http://www.mikemattner.com/resume/mikemattner.pdf" title="View My Resume" class="btn">View My Resume</a></p>
                 </div>
             </div>

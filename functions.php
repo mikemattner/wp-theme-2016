@@ -27,10 +27,6 @@ add_action( 'wp_head', 'mm_ext' );                            // theme extras
 function mm_queue_js() {
   if ( !is_admin() ) {
 
-    //adding scripts file in the footer
-    //Unminified for testing
-    //wp_register_script( 'mm-js', get_template_directory_uri() . '/assets/js/production/production.js', array( 'jquery' ), '2013-02-14-1537', true );
-
     //Production JavaScript
     wp_register_script( 'mm-js', get_template_directory_uri() . '/assets/js/production.min.js', array( 'jquery' ), '2013-02-14-1537', true );
 

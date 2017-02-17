@@ -21,7 +21,6 @@ function randomQuoteMachine() {
     </section>
     <section class="lower">
       <?php /*<p class="call_me_maybe"><?php randomQuoteMachine(); ?></p>*/ ?>
-      <h2>Want to work with me?</h2>
       <p class="hire_me">Get in touch, send an email:<br /> <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.
       <section class="social_links">
           <ul>

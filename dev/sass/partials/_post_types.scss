@@ -157,9 +157,8 @@ article.link h2 {
 /* $[Quote Article Styles] ^article, ^quotes, ^menu ==================================================================== */
 article.quote blockquote p {
     font-size: 1.25em;
-    font-family: $sans-serif-font;
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 blockquote p.author {
     font-size: .825em;
@@ -396,7 +395,7 @@ article.images .images-title {
   }
   article.quote blockquote:before {
       content: '\201C';
-      font-size: 60px;
+      font-size: 100px;
       text-align: center;
       color: #ededed;
       line-height: 60px;

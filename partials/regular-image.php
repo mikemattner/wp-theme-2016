@@ -3,8 +3,8 @@
           <section class="lightbox">  
             <header>
 		          <section class="images-title">
-                            <h2><?php the_title(); ?></h2>
-                      </section>
+                  <h2><?php the_title(); ?></h2>
+              </section>
               <a href="<?php the_permalink() ?>" class="permalink">Permalink</a>
             </header>
             <section class="images-fullsize">
