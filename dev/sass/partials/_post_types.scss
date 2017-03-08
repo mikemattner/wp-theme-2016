@@ -6,35 +6,8 @@
 /*body.blog #content article:first-child {
   padding-top: 0;
 }*/
-article {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 2em 5%;
-}
-  article header {
-      text-align: center
-  }
-  article p.date {
-      color: $metaGray;
-      font-size: .825em;
-      margin: 0 0 0.5em;
-      font-family: $sans-serif-font;
-      text-transform: uppercase;
-      text-align: center;
-  }
-    article p.date a {
-        color: $metaGray
-    }
-    article p.date a:hover {
-        color: $orange
-    }
-  article h2 {
-      margin-top: 0;
-  }
-    article h2 a {
 
-    }
-  .exp_header:after {
+.exp_header:after {
     width: 10%;
     margin-left: 0;
     margin-right: 90%;
@@ -42,38 +15,71 @@ article {
     display: block;
     content: "";
     margin-top: 0.5rem;
-  }
-  article footer {
+}
+
+article {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 2em 5%;
+
+    header {
+      text-align: center;
+    }
+
+    p.date {
+      color: $metaGray;
+      font-size: .825em;
+      margin: 0 0 0.5em;
+      font-family: $sans-serif-font;
+      //text-transform: uppercase;
+      text-align: center;
+
+      a {
+        color: $metaGray;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+    h2 {
+      margin-top: 0;
+    }
+    footer {
       color: $metaGray;
       font-size: .6875em;
       font-family: $sans-serif-font;
       text-align: center;
-      text-transform: uppercase;
-  }
-  article.entry section,
-  article.link section,
-  article.quote section,
-  article footer,
-  #comments,
-  #contact_us {
+      //text-transform: uppercase;
+    }
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      margin: 1.5em 0;
+      padding: 0;
+      border: none;
+      border-top: 1px solid $borderColor;
+    }
+}
+
+article.entry section,
+article.link section,
+article.quote section,
+article footer,
+#comments,
+#contact_us {
     max-width: 640px;
     margin: 0 auto;
-  }
-  article section a, article footer a {
-      border-bottom: 1px solid $darkBorder;
-  }
-  article section a:hover, article footer a:hover {
+}
+article section a, 
+article footer a {
+    border-bottom: 1px solid $darkBorder;
+
+    &:hover {
       text-decoration: none;
       border-bottom: 1px solid $orange;
-  }
-article hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    margin: 1.5em 0;
-    padding: 0;
-    border: none;
-    border-top: 1px solid $borderColor;
+    }
 }
 
 .pull-text,
@@ -95,65 +101,67 @@ article hr {
     margin: 0 .5em;
     color: #ccc;
 }
-/* $[Entry Article Styles] ^article, ^entry, ^menu ==================================================================== */
-article.entry h2 {
-    margin-top: 0;
-    line-height: 1em;
-}
-article.entry h2:after {
-    width: 20%;
-    margin-left: 40%;
-    margin-right: 40%;
-    border-top: 1px solid rgba(0,0,0,0.15);
-    display: block;
-    content: "";
-    margin-top: 1.5rem;
-}
-  article.entry h2 a {
-      color: $hoverColor
-  }
-  article.entry h2 a:hover {
-      color: $orange;
-      text-decoration: none;
-  }
-  article.entry .images-fullsize {
-      background: darken($darkBlue, 15%);
-  }
-  article.entry blockquote, article.link blockquote {
+
+article.entry blockquote, 
+article.link blockquote {
     padding-left: 30px;
     position: relative;
     border-left: 3px solid $lightGray;
-  }/*
-  article.entry blockquote:before, article.link blockquote:before {
-    content: '\201C';
-    font-size: 40px;
-    color:$metaGray;
-    line-height: 40px;
-    width: 20px;
-    height: 40px;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: $sans-serif-font;
-  }*/
+}
+
+/* $[Entry Article Styles] ^article, ^entry, ^menu ==================================================================== */
+article.entry {
+  h2 {
+    margin-top: 0;
+    line-height: 1em;
+
+    &:after {
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+      border-top: 1px solid rgba(0,0,0,0.15);
+      display: block;
+      content: "";
+      margin-top: 1.5rem;
+    }
+
+    a {
+      color: $hoverColor;
+
+      &:hover {
+        color: $orange;
+        text-decoration: none;
+      }
+    }
+
+  }
+  .images-fullsize {
+      background: darken($darkBlue, 15%);
+  }
+
+}
+
 /* $[Link Article Styles] ^article, ^links, ^menu ==================================================================== */
-article.link h2 {
+article.link {
+  h2 {
     font-size: 1em;
     margin-top: 0;
     line-height: 1.5;
-}
-  article.link h2 a {
+
+    a {
       color: $black;
       border-bottom: 1px solid #ddd;
       position: relative;
-      /*margin-right: 1em;*/
-  }
-  article.link h2 a:hover {
+
+      &:hover {
       color: $orange;
-      text-decoration: none;
-      border-bottom: 1px solid $orange;
+        text-decoration: none;
+        border-bottom: 1px solid $orange;
+      }
+    }
   }
+}
+
 /* $[Quote Article Styles] ^article, ^quotes, ^menu ==================================================================== */
 article.quote blockquote p {
     font-size: 1.25em;
@@ -181,8 +189,6 @@ article.images {
       letter-spacing: 2px;
       margin-top: 0;
       color: $white;
-      font-weight: 100;
-      text-transform: uppercase;
       display: inline-block;
   }
     article.images h2 a {
@@ -454,9 +460,9 @@ article.images .images-title {
   }
   .pull-text.wide {
       float: left;
-      margin-left: -25%;
-      width: 30%;
-      margin-right: 1em;
+      margin-left: -30%;
+      width: 35%;
+      margin-right: 5%;
       margin-bottom: 1em;
       margin-top: 0;
       padding-right: 1em;
@@ -465,9 +471,9 @@ article.images .images-title {
   }
   .push-text.wide {
       float: right;
-      margin-right: -25%;
-      width: 30%;
-      margin-left: 1em;
+      margin-right: -30%;
+      width: 35%;
+      margin-left: 5%;
       margin-bottom: 1em;
       margin-top: 0;
       padding-left: 1em;

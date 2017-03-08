@@ -20,17 +20,37 @@
 // mixins
 // ----------------------------------------------------------------------------------------------------------------
 
-@mixin transition($directives) {
-  transition: $directives;
-  -moz-transition: $directives;
-  -webkit-transition: $directives;
-  -o-transition: $directives;
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
 }
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
+/* TRANSFORM  */
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
+/* TRANSITION */
+@mixin transition($properties...) {
+
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  }
+
+  @else {
+    @include css3-prefix('transition', $what: all, $length: 1s, $easing: ease-in-out);
+  }
+}
+
+@mixin border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -85,28 +105,6 @@
     color: $color !important;
     opacity: 1;
   }
-}
-
-@mixin border-box {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@mixin transform($transforms) {
-  -moz-transform: $transforms;
-  -o-transform: $transforms;
-  -ms-transform: $transforms;
-  -webkit-transform: $transforms;
-  transform: $transforms;
-}
-
-@mixin scale($scale) {
-  @include transform(scale($scale));
-}
-
-@mixin scaleY($scale) {
-  @include transform(scaleY($scale));
 }
 
 @mixin text-size($size, $standard, $tablet, $mobile, $line-height) {

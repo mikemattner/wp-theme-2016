@@ -1,0 +1,1 @@
+            <?php the_category(', '); ?> <span class="bullet">&bull;</span> <a href="<?php comments_link(); ?>" title="Comments"><?php comments_number('0','1','%'); ?> Comments</a><?php edit_post_link('Edit Post', ' <span class="bullet">&bull;</span> ', '');?>

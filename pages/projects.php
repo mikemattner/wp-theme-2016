@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: projects
+Template Name: Projects
 */
 get_header();
 $num = 1;
@@ -13,7 +13,7 @@ function randPlaceIMG() {
     <div id="page_header" class="page projects-header">
             <div class="wrapper">
                 <div class="fade-in-up">
-                  <h1 class="pagetitle"><span>I'm Mike Mattner.</span> Designer &amp; Developer</h1>
+                  <h1 class="pagetitle">I'm Mike Mattner Designer &amp; Developer</h1>
                   <p>I work as an Associate Creative Director at <a href="http://aislerocket.com" rel="nofollow">Aisle Rocket Studios</a>.</p>
                   <p><a href="http://www.mikemattner.com/info/" title="Learn More" class="btn">Learn More</a></p>
                 </div>

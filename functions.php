@@ -27,9 +27,12 @@ add_action( 'wp_head', 'mm_ext' );                            // theme extras
 function mm_queue_js() {
   if ( !is_admin() ) {
 
+    //adding scripts file in the footer
+    //Unminified for testing
+    //wp_register_script( 'mm-js', get_template_directory_uri() . '/dev/js/production/production.js', array( 'jquery' ), '2013-02-14-1537', true );
+
     //Production JavaScript
     wp_register_script( 'mm-js', get_template_directory_uri() . '/assets/js/production.min.js', array( 'jquery' ), '2013-02-14-1537', true );
-
     wp_enqueue_script( 'mm-js' );
 
     //enqueu comment-reply script
@@ -116,4 +119,25 @@ function disable_emojicons_tinymce( $plugins ) {
 // remove WP version from RSS
 function mm_rss_version() { return ''; }
 
-?>
+function mmTags() { 
+  if( $tags = get_the_tags() ) {
+      echo '<span class="tags">';
+      foreach( $tags as $tag ) {
+          $sep = ( $tag === end( $tags ) ) ? '' : ', ';
+          echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+      }
+      echo '</span>';
+  }
+}
+
+function mmPaged() {
+  global $paged, $wp_query;
+  $max_page = $wp_query->max_num_pages;
+  if ( $paged > 1 ) { 
+    $output = 'Page ' . $paged . " of " . $max_page; 
+  } else {
+    $output = 'Page ' . '1 of ' . $max_page;
+  }
+
+  return $output;
+}
