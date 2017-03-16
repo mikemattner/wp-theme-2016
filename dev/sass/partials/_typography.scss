@@ -3,29 +3,34 @@
 *   Typography
 *
 ------------------------------------*/
-.normal,
+/*.normal,
 h4,
 h3 {
     font-size: 1em;
-    /*line-height: 1.5em;*/
+    //line-height: 1.5em;
 }
 .large,
 h2 {
     font-size: 1.375em;
-    /*line-height: 1.3846153846153846em;*/
+    //line-height: 1.3846153846153846em;
 }
 .huge,
 h1 {
     font-size: 2.625em;
-    /*line-height: 1.1428571428571428em;*/
+    //line-height: 1.1428571428571428em;
 }
+h2 {
+    margin-bottom: 0.46153846153846156em
+}
+h3 {
+    margin: 3em 0 1.5em
+}*/
 .small,
 small,
 code,
 #copyright p,
 .post_reference {
     font-size: 0.8125em;
-    /*line-height: 1.3846153846153846em;*/
 }
 input,
 textarea,
@@ -45,12 +50,6 @@ blockquote,
     -moz-hyphens: auto;
     hyphens: auto;
 }
-/*h2 {
-    margin-bottom: 0.46153846153846156em
-}
-h3 {
-    margin: 3em 0 1.5em
-}*/
 /* Selection colours (easy to forget) */
 ::selection {
     background: rgba($orange,1.0);
@@ -121,17 +120,19 @@ hr {
 }
 /* $[General Elements] ^not_reset_related ==================================================================== */
 
-/* $[Universal Links] ^not_reset_related ==================================================================== */
-a:link,
-a:visited,
-a:active {
-    color: $linkColor;
-    text-decoration: none;
+
+/*CODE ------------------------------------------------------------------------ */
+div.code {
+  overflow: auto; 
+  font-size: 1em; 
+  margin-top: 1.5em !important; 
+  margin-bottom: 1.5em !important; 
 }
-a:hover {
-    color: $orange;
-    text-decoration: underline;
+div.code code  {
+  font-family: Menlo, Monaco, monospace; 
+  margin:0; 
+  font-size: 0.675em;
 }
-a {
-    @include transition(all 0.2s ease-out);
+pre {
+  margin:0;
 }

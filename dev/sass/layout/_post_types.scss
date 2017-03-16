@@ -22,8 +22,22 @@ article {
     margin: 0 auto;
     padding: 2em 5%;
 
+    /*img {
+      @include transition(all .2s ease-in-out);
+
+      &:hover {
+        box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+      }
+    }*/
+
     header {
       text-align: center;
+    }
+
+    .tags {
+      a {
+
+      }
     }
 
     p.date {
@@ -31,7 +45,6 @@ article {
       font-size: .825em;
       margin: 0 0 0.5em;
       font-family: $sans-serif-font;
-      //text-transform: uppercase;
       text-align: center;
 
       a {
@@ -72,16 +85,6 @@ article footer,
     max-width: 640px;
     margin: 0 auto;
 }
-article section a, 
-article footer a {
-    border-bottom: 1px solid $darkBorder;
-
-    &:hover {
-      text-decoration: none;
-      border-bottom: 1px solid $orange;
-    }
-}
-
 .pull-text,
 .push-text,
 .image {
@@ -150,68 +153,66 @@ article.link {
 
     a {
       color: $black;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 0;
       position: relative;
 
+      &:after {
+          content: "";
+          background-color: $lightGray;
+          position: absolute;
+          bottom: 0;
+          right: -1px;
+          left: -1px;
+          height: 1px;
+          @include transition(all 0.125s ease-in-out);
+          z-index: -1;
+      }
+
       &:hover {
-      color: $orange;
+        color: $white;
         text-decoration: none;
-        border-bottom: 1px solid $orange;
+        border-bottom: 0;
+
+        &:after {
+        background-color: $orange;
+         height: 100%;
+        }
       }
     }
   }
 }
 
 /* $[Quote Article Styles] ^article, ^quotes, ^menu ==================================================================== */
-article.quote blockquote p {
-    font-size: 1.25em;
-    font-weight: 300;
-    line-height: 1.6;
+article.quote {
+  blockquote {
+    p {
+      font-size: 1.25em;
+      font-weight: 300;
+      line-height: 1.6;
+      &.author {
+        font-size: .825em;
+        font-family: $sans-serif-font;
+        text-transform: uppercase;
+        color: tint($darkBlue,70%);
+      }
+    }
+  }
 }
-blockquote p.author {
-    font-size: .825em;
-    font-family: $sans-serif-font;
-    text-transform: uppercase;
-    color: #777;
-}
-article.quote blockquote p.author {
-    font-size: .825em;
-    font-family: $sans-serif-font;
-    text-transform: uppercase;
-    color: #777;
-}
+
 /* $[Link Images Styles] ^article, ^images, ^menu ==================================================================== */
 article.images {
-    max-width: 960px
-}
-  article.images h2 {
-      font-size: 1.5em;
-      letter-spacing: 2px;
-      margin-top: 0;
-      color: $white;
-      display: inline-block;
+  max-width: 960px;
+
+  .images-title {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      @include transition(all .25s ease-in-out);
+      @include transform(scale(0.9));
   }
-    article.images h2 a {
-        color: $white
-    }
-    article.images h2 a:hover {
-        color: $white
-    }
-  article.images .lightbox {
-      position: relative;
-      margin: 1em 0;
-  }
-  article.images.single .lightbox {
-      position: relative;
-      margin: 0 0 1em;
-  }
-  article.images .images-fullsize {
-      background: darken($darkBlue, 15%);
-  }
-  article.images .lightbox img {
-      margin: 0 auto
-  }
-  article.images header {
+
+  header {
+      background: rgba(darken($darkBlue, 10%),0.75);
       display: block;
       width: 100%;
       height: 100%;
@@ -220,30 +221,26 @@ article.images {
       left: 0;
       text-align: center;
       color: $white;
-      background: rgba(darken($darkBlue, 10%),0.85);
-      -webkit-transition: opacity .25s ease-in;
-      -moz-transition: opacity .25s ease-in;
-      transition: opacity .25s ease-in;
+      @include transition(all .25s ease-in-out);
       opacity: 0;
+      z-index: 10;
+
       .images-title {
-        -webkit-transform: translateY(100%);
-                transform: translateY(100%);
-        -webkit-transition: all .25s ease-in-out;
-           -moz-transition: all .25s ease-in-out;
-                transition: all .25s ease-in-out;
         h2 {
           margin: 0;
         }
       }
-  }
-  article.images header:hover {
-      opacity: 1;
-      .images-title {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-      }
-  }
-  article.images header .permalink {
+
+      &:hover {
+        opacity: 1;
+        @include transform(scale(1.015));
+
+        .images-title {
+          @include transform(scale(1));
+        }
+    }
+
+    .permalink {
       text-indent: -9999px;
       opacity: 0;
       display: block;
@@ -253,97 +250,113 @@ article.images {
       top: 0;
       left: 0;
       text-align: center;
+      z-index: 10;
+    }
   }
-article.images.single header {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-    text-align: center;
-    color: #505050;
-    text-shadow: none;
-    background: none;
-    .images-title {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-        h2 {
-          margin-bottom: 1.5rem;
+
+  h2 {
+      font-size: 1.5em;
+      letter-spacing: 2px;
+      margin-top: 0;
+      color: $white;
+      display: inline-block;
+      
+      a {
+        color: $white;
+
+        &:hover {
+          color: $white;
         }
       }
-}
-  article.images.single header .permalink {
-      display: none
   }
-article.images.single h2 {
-    font-size: 2.75em;
-    margin-top: 0;
-    line-height: 1em;
-    text-transform: none;
-    letter-spacing: 0;
-    font-weight: 700;
-    color: $black;
-    padding: 0;
-    border: none;
-    display: block;
+
+  .lightbox {
+      position: relative;
+      margin: 1em 0;
+      @include transition(all .25s ease-in-out);
+
+      .images-fullsize {
+          background: darken($darkBlue, 15%);
+          box-shadow: 0 0 15px rgba($darkBlue, 0.0);
+          @include transition(all .25s ease-in-out);
+          border-radius: 2px;
+      }
+  
+      img {
+        margin: 0 auto;
+        @include transition(all .25s ease-in-out);
+        z-index: 1;
+      }
+
+      &:hover {
+          .images-fullsize {
+            @include transform(scale(1.015));
+            box-shadow: 0 0 25px rgba($darkBlue, 0.5);
+          }
+      }
+  }
+
+  .images-fullsize {
+      background: darken($darkBlue, 15%);
+  }
+
+  /*&.single {
+    header {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+        color: #505050;
+        text-shadow: none;
+        background: none;
+        .images-title {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+            h2 {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+      .permalink {
+        display: none
+      }
+    }
+    .lightbox {
+      position: relative;
+      margin: 0 0 1em;
+    }
+
+    h2 {
+      font-size: 2.75em;
+      margin-top: 0;
+      line-height: 1em;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 700;
+      color: $black;
+      padding: 0;
+      border: none;
+      display: block;
+    }
+
+    .images-title {
+      position: relative;
+      top: 0;
+    }
+  } */
 }
+
+
 article.images .images-content,
 article.images footer,
 article.images.single header {
     margin: 0 auto;
     max-width: 640px;
 }
-article.images .images-title {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      -webkit-tansform: translateY(-50%);
-              tansform: translateY(-50%);
-  }
-  article.images.single .images-title {
-      position: relative;
-      top: 0;
-  }
-.image-archive-surround {
-    margin: 0 auto;
-    background: #000;
-}
-#image-archive {
-    max-width: 1500px;
-    margin: 0 auto;
-}
-  #image-archive article.images.archive {
-      padding: 0 5%;
-      text-align: center;
-  }
-    #image-archive article.images.archive header {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-top: 2em;
-        text-align: center;
-        color: $white;
-        text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-        background: rgba(0,0,0,0.85);
-        -webkit-transition: opacity 0.25s linear;
-        -moz-transition: opacity 0.25s linear;
-        transition: opacity 0.25s linear;
-    }
-    #image-archive article.images.archive header:hover {
-        opacity: 0
-    }
-.image-archives {
-    background: #000
-}
-  .image-archives h1 {
-      color: $white
-  }
 
 /* @media { 
 } screen and (min-width: 768px) */
@@ -358,8 +371,8 @@ article.images .images-title {
 @media screen and (min-width: 60em) {
   div.code {
       max-width: 960px;
-      margin-left: -10%;
-      margin-right: -10%;
+      margin-left: -15%;
+      margin-right: -15%;
   }
   .embed-container {
       max-width: 760px;
@@ -389,27 +402,23 @@ article.images .images-title {
       max-width: 2200px;
   } 
 
-  #image-archive article.images.archive {
-      float: left;
-      width: 50%;
-      padding: 0;
-      margin: 0;
-  }
   article.quote blockquote {
       padding-left: 0;
       position: relative;
   }
   article.quote blockquote:before {
       content: '\201C';
-      font-size: 100px;
+      font-size: 8rem;
       text-align: center;
-      color: #ededed;
-      line-height: 60px;
+      color: tint($darkBlue,95%);
+      line-height:7.5rem;
       width: 30px;
       display: block;
       position: absolute;
-      top: 0;
-      left: -50px;
+      top: -10px;
+      left: -60px;
+      font-family: $sans-serif-font;
+      font-weight: 400;
   }
   .pull-text,
   .push-text {
@@ -438,8 +447,8 @@ article.images .images-title {
   }
   .pull-text {
       float: left;
-      margin-left: -25%;
-      width: 19%;
+      margin-left: -30%;
+      width: 23%;
       margin-right: 0;
       margin-bottom: 0;
       margin-top: 0;
@@ -449,8 +458,8 @@ article.images .images-title {
   }
   .push-text {
       float: right;
-      margin-right: -25%;
-      width: 19%;
+      margin-right: -30%;
+      width: 23%;
       margin-left: 0;
       margin-bottom: 0;
       margin-top: 0;
@@ -466,7 +475,7 @@ article.images .images-title {
       margin-bottom: 1em;
       margin-top: 0;
       padding-right: 1em;
-      border-right: 1px solid #ededed;
+      border-right: 1px solid $borderColor;
       text-align: left;
   }
   .push-text.wide {
@@ -477,7 +486,7 @@ article.images .images-title {
       margin-bottom: 1em;
       margin-top: 0;
       padding-left: 1em;
-      border-left: 1px solid #ededed;
+      border-left: 1px solid $borderColor;
       text-align: left;
   }
 }
@@ -485,12 +494,7 @@ article.images .images-title {
 /* @media {media_subcode : 1
 } screen and (min-width: 1200px) */
 @media screen and (min-width: 75em) { 
-  #image-archive article.images.archive {
-      float: left;
-      width: 33%;
-      padding: 0;
-      margin: 0;
-  }
+
   article p.date {
       font-size: .75em;
   }

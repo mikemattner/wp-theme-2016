@@ -14,11 +14,9 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandl
     <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/favicon-16x16.png" sizes="16x16" />
         
     <?php wp_head(); ?>
-    <!--<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/vendor/font-awesome.min.css" media="all" />!-->
-    
   </head>
   
-<body <?php body_class(mm_body_class()); ?> lang="en">
+<body <?php echo mm_body_class(); ?> lang="en">
 <header id="header" class="fixed cbp-af-header" role="banner">
   <div class="wrapper clearfix">
     <?php get_template_part( 'components/header/site', 'branding' ); ?>

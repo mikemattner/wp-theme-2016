@@ -1,0 +1,129 @@
+.archives,
+.archives-master,
+.archives-search,
+.about-header {
+  
+}
+
+#page_header {
+   /*
+   background: $darkBlue url(../images/mountains.jpg) no-repeat top center;
+    */
+}
+
+.fourohfour {
+    font-size: 18em;
+    font-weight:700;
+    line-height: 1;
+    color: $white;
+}
+
+#page_header {
+    font-size: 1em;
+    padding: 10.5em 0 6.5em;
+    text-align: center;
+    font-size: .875em;
+    margin-bottom: 2em;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $darkBlue;
+        transform: skewY(-3deg);
+        transform-origin: top left;
+        z-index: -1;
+    }
+
+  .pagetitle {
+      font-family: $sans-serif-font;
+      font-weight: 700;
+      color: $white;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+
+      &:after {
+        width: 20%;
+        margin-left: 40%;
+        margin-right: 40%;
+        border-top: 1px solid #ff5801;
+        display: block;
+        content: "";
+        margin-top: 1.5rem;
+      }
+  }
+  .sub-title {
+    font-family: $sans-serif-font;
+    font-size: 0.75em;
+    letter-spacing: 0.06em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+  .paged {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        line-height: 1.6;
+        color: $headerTextColor;
+  }
+  p {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      color: $headerTextColor;
+    
+      a {
+          border-bottom: 0;
+          text-decoration: none;
+          display: inline-block;
+          position: relative;
+
+          &:after {
+              content: "";
+              background-color: rgba($white, 0.125);
+              position: absolute;
+              bottom: 0;
+              right: -1px;
+              left: -1px;
+              height: 1px;
+              @include transition(all 0.125s ease-in-out);
+              z-index: -1;
+          }
+
+          &:hover {
+            text-decoration: none;
+            background-color: none;
+            color: $white;
+
+            &:after {
+              height: 100%;
+              background-color: $orange;
+            }
+
+          }
+      }
+  }
+}
+
+
+/* @media {  
+} screen and (min-width: 600px) */
+@media screen and (min-width: 37.5em) { 
+  #page_header {
+      font-size: 1em;
+
+      .pagetitle {
+        font-size: 3.5em;
+        line-height: 1.0;
+      }
+  }
+}

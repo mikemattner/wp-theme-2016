@@ -8,7 +8,7 @@
 
 require_once 'libs/theme.inc.php';                      //Sidebars, Custom Menus, Comments
 require_once 'libs/wordpress_function_updates.inc.php'; //Customizing core Wordpress functions
-require_once 'libs/custom_functions.inc.php';       //Adding in a few custom functions
+require_once 'libs/custom_functions.inc.php';           //Adding in a few custom functions
 
 
 // Adding theme items.
@@ -29,7 +29,7 @@ function mm_queue_js() {
 
     //adding scripts file in the footer
     //Unminified for testing
-    //wp_register_script( 'mm-js', get_template_directory_uri() . '/dev/js/production/production.js', array( 'jquery' ), '2013-02-14-1537', true );
+    //wp_register_script( 'mm-js', get_template_directory_uri() . '/dev/js/build/production.js', array( 'jquery' ), '2013-02-14-1537', true );
 
     //Production JavaScript
     wp_register_script( 'mm-js', get_template_directory_uri() . '/assets/js/production.min.js', array( 'jquery' ), '2013-02-14-1537', true );
@@ -63,8 +63,8 @@ function mm_ext() {
 
 //TypeKit Javascript
 function mm_typekit() {
-  echo '<script src="//use.typekit.net/cov7fkw.js"></script>';
-  echo '<script>try{Typekit.load();}catch(e){}</script>';
+  echo '<script src="https://use.typekit.net/sie8fvr.js"></script>';
+  echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
 }
 
 //Google Analytics

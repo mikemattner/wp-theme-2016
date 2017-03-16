@@ -3,13 +3,13 @@
 // ----------------------------------------------------------------------------------------------------------------
 $darkBlue: rgba(39,47,52,1.0);
 $orange: rgba(255,88,1,1.0);
-$lightGray: lighten($darkBlue, 80%);
-$darkGray: lighten($darkBlue, 50%);
+$lightGray: tint($darkBlue, 80%);
+$darkGray: tint($darkBlue, 50%);
 $white: rgba(255,255,255,1.0);
 $black: rgba(0,0,0,1.0);
-$borderColor: lighten($darkBlue, 80%);
-$darkBorder: lighten($darkBlue, 65%);
-$metaGray: lighten($darkBlue, 50%);
+$borderColor: tint($darkBlue, 95%);
+$darkBorder: tint($darkBlue, 65%);
+$metaGray: tint($darkBlue, 50%);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography

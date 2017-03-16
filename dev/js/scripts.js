@@ -131,7 +131,7 @@ function hasScrolled() {
 
 /*=====================================
 Parralaxin
-=====================================*/
+=====================================
 function mm_scroll_actions() {
     
     var scrolltop = $j(window).scrollTop(), 
@@ -152,4 +152,4 @@ function mm_scroll_actions() {
 
 $j(window).scroll(function() {
         mm_scroll_actions();
-});
+});*/

@@ -1,6 +1,15 @@
 /* $[Gallery Base Styles] ^gallery ==================================================================== */
 .gallery {
     margin:1.5em 0;
+
+    a {
+      @include transition(all .125s ease-in-out);
+
+      &:hover {
+        @include transform(scale(1.015));
+        box-shadow: 0 0 25px rgba($darkBlue, 0.35);
+      }
+    }
 }
 
 .gallery-item {

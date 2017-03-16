@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Archives
+Template Name: Master Archives
 */
 get_header(); ?>
     
@@ -10,20 +10,18 @@ get_header(); ?>
       	<div class="wrapper">
           <div class="fade-in-up">
            <h1 class="pagetitle">Archives</h1>
-           <div class="clearfix">
             <section>
               <ul class="cats">
                 <?php listCats(); ?>       
               </ul>
             </section>
-           </div>
          </div>
         </div>
       </div>
-			<?php /*<article class="clearfix">
+			<article class="clearfix">
                 <?php smart_archives(); ?>
 			</article>
-      <hr />*/ ?>
+      <hr />
       <article>
         <div class="wrapper tag_list clearfix">
           <section>

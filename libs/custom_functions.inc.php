@@ -3,25 +3,6 @@
  * @package MikeMattner_theme_core_functions
  * @version 2.0
  */
-function display_ads(){
-    $display = '<div class="ad_pack_surround clearfix">
-                  <div class="ad_surround">
-                      <script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1270392&zoneid=1386&key=830239503ead81f089885398410dbb52&serve=C6SD52Y&placement=wwwmikemattnercom&circle=dev" id="_adpacks_js"></script>
-          </div>
-          </div>';
-    //echo $display;
-
-}
-
-function social_share() { ?>
-  <div id="social_share">
-	<div  class="clearfix">
-	<div id="share_me" data-url="<?php echo wp_get_shortlink(); ?>" data-text="Read: <?php the_title(); ?> @mikemattner"></div>
-	</div>
-  </div>
-<?php
-}
-
 function get_my_tags($tot)
 {   
 	$tags = get_tags();
@@ -42,7 +23,7 @@ function get_my_tags($tot)
     
 	foreach($tags as $tag)
 	{
-		    $html .= '<li><a href="http://www.mikemattner.com/tag/' . $tag->slug . '/">' . $tag->name . ' <em>' . $tag->count . '</em></a></li>';
+		    $html .= '<li><a href="' . esc_url( home_url( '/' ) ) .'tag/' . $tag->slug . '/">' . $tag->name . ' <em>' . $tag->count . '</em></a></li>';
 
 	}
 	$html .= '</ul>';
@@ -70,6 +51,7 @@ function listCats() {
   
   foreach ($categories as $cat) {
 
+    /*
     switch ($cat->cat_ID) {
         case 3: //Entry
             $icon = '<i class="fa fa-file-text"></i>';
@@ -84,7 +66,8 @@ function listCats() {
             $icon = '<i class="fa fa-camera"></i>';
             break;
       }
-            echo '<li><a href="'.$url.'/'.$cat_base.'/'.$cat->category_nicename.'/">'.$icon.' '.$cat->cat_name.'</span></a></li>'; //<span style="width: '.$tag_width.'%">
+      */
+            echo '<li><a href="'.$url.'/'.$cat_base.'/'.$cat->category_nicename.'/">'.$cat->cat_name.'</span></a></li>'; //<span style="width: '.$tag_width.'%">
 
   }
 }
@@ -92,7 +75,7 @@ function listCats() {
 //get_the_time('U') - for entries
 //get_comment_time('U') - for comments
 if(!function_exists('how_long_ago')){
-        function how_long_ago($timestamp){
+  function how_long_ago($timestamp){
             $difference = (time() - 18000) - $timestamp;
 			
 			
@@ -131,38 +114,7 @@ if(!function_exists('how_long_ago')){
               return $r;
 			}
 			
-        }
-    }
-
-function time_ago( $type = 'post' ) {
-	$d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';
-
-	return human_time_diff($d('U'), current_time('timestamp')) . " " . __('ago');
-
-}
-    
-function tweet($text) {
-       $text = preg_replace('/([\.|\,|\:|\¡|\¿|\>|\{|\(]?)@{1}(\w*)([\.|\,|\:|\!|\?|\>|\}|\)]?)\s/i', "$1@<a href=\"http://twitter.com/$2\" class=\"tweet-username\">$2</a>$3 ", $text);
-       $text = preg_replace('/([\.|\,|\:|\¡|\¿|\>|\{|\(]?)#{1}(\w*)([\.|\,|\:|\!|\?|\>|\}|\)]?)\s/i', "$1<a href=\"http://search.twitter.com/search?q=%23$2\" class=\"tweet-hashtag\">#$2</a>$3 ", $text);
-       return $text;
-} 
-
-/**
-* A pagination function
-*/
-function get_pagination(){
-  // $paged - number of the current page
-  global $paged, $wp_query;
-  // How much pages do we have?
-  if ( !$max_page ) {
-    $max_page = $wp_query->max_num_pages;
   }
-  if(!$paged){  
-      $paged = 1;  
-  } 
-  if($max_page > 1){
-     echo $paged.' of '.$max_page;
-  } else {echo '&nbsp;';}
 }
 
 ?>
