@@ -187,30 +187,24 @@ nav[role="navigation"] ul {
           display: inline-block;
       }
       nav[role="navigation"] ul li a:hover {
-          
+          color: $white;
       }
     nav[role="navigation"] ul li a:after {
         content: "";
+        background-color: $lightGray;
         position: absolute;
-        left: 0;
-        bottom: 2px;
-        width: 100%;
-        background: rgba($white,0.125);
-        height: 2px;
-        display: block;
+        bottom: 0;
+        right: -1px;
+        left: -1px;
+        height: 1px;
+        @include transition(all 0.125s ease-in-out);
+        z-index: -1;
         opacity: 0;
-        -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-        -moz-transition: opacity 0.3s, -moz-transform 0.3s;
-        transition: opacity 0.3s, transform 0.3s;
-        -webkit-transform: translateY(10px);
-        -moz-transform: translateY(10px);
-        transform: translateY(10px);
     }
     nav[role="navigation"] ul li a:hover::after {
         opacity: 1;
-        -webkit-transform: translateY(0px);
-        -moz-transform: translateY(0px);
-        transform: translateY(0px);
+        height: 100%;
+        background-color: $orange;
     }
   .logo-img,
   .logo-title {

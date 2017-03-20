@@ -25,7 +25,7 @@ function randPlaceIMG() {
                 <?php randPlaceIMG(); ?>
                 <header>
                     <section class="snapshots-title">
-                        <h2>Longer Snapshots Title In Here</h2>
+                        <h2>App Proposal in Brand Planning</h2>
                         <p>May 1, 2016</p>
                     </section>
                     <a href="#" class="permalink">Permalink</a>
