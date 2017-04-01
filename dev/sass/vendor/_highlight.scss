@@ -8,10 +8,11 @@
   display: block;
   overflow-x: auto;
   padding: 1.5em;
-  background: #222;
+  background: $darkBlue;
   color: #fff;
   font-family: Menlo, Monaco, 'Andale Mono', 'Lucida Console', 'Courier New', monospace;
   -webkit-text-size-adjust: none;
+  border-radius: 2px;
 }
 
 .hljs-comment,

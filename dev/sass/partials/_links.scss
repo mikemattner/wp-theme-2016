@@ -1,0 +1,86 @@
+/* $[Universal Links] ^not_reset_related ==================================================================== */
+a:link,
+a:visited,
+a:active {
+    color: $linkColor;
+    text-decoration: none;
+}
+a:hover {
+    color: $orange;
+    text-decoration: underline;
+}
+a {
+    @include transition(all 0.2s ease-in-out);
+}
+
+article section a {
+    border-bottom: 0;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+
+    &:after {
+        content: "";
+        background-color: $lightGray;
+        position: absolute;
+        bottom: 0;
+        right: -1px;
+        left: -1px;
+        height: 1px;
+        @include transition(all 0.125s ease-in-out);
+        z-index: -1;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background-color: none;
+      color: $white;
+
+      &:after {
+        height: 100%;
+        background-color: $orange;
+      }
+
+    }
+}
+#footer .hire_me a {
+    border-bottom: 0;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: $footerTextColor;
+
+    &:after {
+        content: "";
+        background-color: $footerTextColor;
+        position: absolute;
+        bottom: 0;
+        right: -1px;
+        left: -1px;
+        height: 1px;
+        @include transition(all 0.125s ease-in-out);
+        z-index: -1;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background-color: none;
+      color: $white;
+
+      &:after {
+        height: 100%;
+        background-color: $orange;
+      }
+
+    }
+}
+
+.push-text a,
+.pull-text a,
+.image a, 
+.tag_list ul li a,
+.gallery a {
+    &:after {
+        display: none;
+    }
+}

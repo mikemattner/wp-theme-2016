@@ -1,7 +1,3 @@
-<?php 
-global $paged, $wp_query;
-$max_page = $wp_query->max_num_pages;
-?>
 <?php get_header(); ?>
 <?php query_posts($query_string . '&cat=-93,-549'); ?>    
 <?php if (have_posts()) : ?>
@@ -29,7 +25,7 @@ $max_page = $wp_query->max_num_pages;
 	         $tax_term = $term->taxonomy;
 	         echo '<h1 class="pagetitle">'.$tax_term . ': ' . $term->name . '</h1>';
            } ?>
-              <p><?php if ( $paged > 1 ) { echo (' Page '); echo ($paged . " of " . $max_page); } else {echo (' Page '); echo ("1 of " . $max_page); } ?></p>
+              <p class="paged"><?php echo mmPaged(); ?></p>
             </div>
           </div>
       </div>
@@ -50,34 +46,3 @@ $max_page = $wp_query->max_num_pages;
 
 <?php endif; ?>
 <?php get_footer(); ?>
-
-
-<?php
-/*
-<?php 
-         $n = 0; 
-         $num = 0;
-         ?>
-  <?php while (have_posts()) : the_post(); ?>
-  <?php      
-    if ($n > 0) {
-      echo '<hr />';
-    }
-    $n++;
-    $color_array = array('odd','third','even');
-    $odd = $color_array[$num];
-    //$odd = ($num % 2 ? 'odd' : 'even');
-  ?>
-  <section class="<?php echo $odd; ?>">
-  <?php include(TEMPLATEPATH . '/post.php'); ?>
-  </section>
-  <?php
-    //echo "<!-- $num $odd !-->"; 
-    $num++;
-    if ($num == 3) {
-      $num = 0;
-    }
-    endwhile; ?>
-*/
-?>
-

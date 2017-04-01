@@ -4,7 +4,9 @@
 @import "partials/normalize";
 @import "partials/reset";
 @import "partials/fluid-media";
+@import "partials/fonts";
 @import "partials/typography";
+@import "partials/defaults";
 @import "partials/animations";
 
 // lity, highlight
@@ -12,20 +14,25 @@
 @import "vendor/highlight";
 
 // grid,defaults
-@import "partials/grid";
+@import "layout/grid";
 @import "partials/defaults";
+@import "partials/buttons";
+@import "partials/links";
 
 // header,footer
-@import "partials/header";
-@import "partials/footer";
+@import "layout/header";
+@import "layout/footer";
 
 // blog
-@import "partials/post_types";
-@import "partials/gallery";
-@import "partials/search";
-@import "partials/comments_forms";
-@import "partials/blog_helpers";
-@import "partials/section_headers";
+@import "layout/post_types";
+@import "layout/gallery";
+@import "layout/search";
+@import "layout/comments_forms";
+@import "layout/forms";
+@import "layout/blog_helpers";
+@import "layout/nav";
+@import "layout/section_headers";
 
-// portfolio
-@import "modules/portfolio"
+// Work & things
+@import "modules/portfolio";
+@import "modules/snapshots";

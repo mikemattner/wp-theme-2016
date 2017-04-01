@@ -4,10 +4,10 @@ Template Name: contact
 */
 
 //adding qr javascript file in the footer
-wp_register_script( 'mm-validate-js', get_template_directory_uri() . '/assets/js/misc/validate.js', array( 'jquery' ), '2016-02-15-1537', true );
+wp_register_script( 'mm-validate-js', get_template_directory_uri() . '/assets/js/contact/validate.js', array( 'jquery' ), '2016-02-15-1537', true );
 wp_enqueue_script( 'mm-validate-js' );
 
-wp_register_script( 'mm-contact-js', get_template_directory_uri() . '/assets/js/misc/contact.js', array( 'jquery' ), '2016-02-15-1537', true );
+wp_register_script( 'mm-contact-js', get_template_directory_uri() . '/assets/js/contact/contact.js', array( 'jquery' ), '2016-02-15-1537', true );
 wp_enqueue_script( 'mm-contact-js' );
 
 // Make the page validate

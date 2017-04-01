@@ -1,0 +1,504 @@
+// ----------------------------------------------------------------------------------------------------------------
+// blog post types
+// ----------------------------------------------------------------------------------------------------------------
+
+/* $[Base Article Styles] ^article, ^menu ==================================================================== */
+/*body.blog #content article:first-child {
+  padding-top: 0;
+}*/
+
+.exp_header:after {
+    width: 10%;
+    margin-left: 0;
+    margin-right: 90%;
+    border-top: 1px solid $orange;
+    display: block;
+    content: "";
+    margin-top: 0.5rem;
+}
+
+article {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 2em 5%;
+
+    /*img {
+      @include transition(all .2s ease-in-out);
+
+      &:hover {
+        box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+      }
+    }*/
+
+    header {
+      text-align: center;
+    }
+
+    .tags {
+      a {
+
+      }
+    }
+
+    p.date {
+      color: $metaGray;
+      font-size: .825em;
+      margin: 0 0 0.5em;
+      font-family: $sans-serif-font;
+      text-align: center;
+
+      a {
+        color: $metaGray;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+    h2 {
+      margin-top: 0;
+    }
+    footer {
+      color: $metaGray;
+      font-size: .6875em;
+      font-family: $sans-serif-font;
+      text-align: center;
+      //text-transform: uppercase;
+    }
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      margin: 1.5em 0;
+      padding: 0;
+      border: none;
+      border-top: 1px solid $borderColor;
+    }
+}
+
+article.entry section,
+article.link section,
+article.quote section,
+article footer,
+#comments,
+#contact_us {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.pull-text,
+.push-text,
+.image {
+    font-size: .675em;
+    padding: .5em;
+    line-height: 1.5;
+    color: #a5b5b5;
+    font-style: italic;
+}
+.pull-text,
+.push-text {
+    margin: 1.5em 0;
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+}
+.bullet {
+    margin: 0 .5em;
+    color: #ccc;
+}
+
+article.entry blockquote, 
+article.link blockquote {
+    padding-left: 30px;
+    position: relative;
+    border-left: 3px solid $lightGray;
+}
+
+/* $[Entry Article Styles] ^article, ^entry, ^menu ==================================================================== */
+article.entry {
+  h2 {
+    margin-top: 0;
+    line-height: 1em;
+
+    &:after {
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+      border-top: 1px solid rgba(0,0,0,0.15);
+      display: block;
+      content: "";
+      margin-top: 1.5rem;
+    }
+
+    a {
+      color: $hoverColor;
+
+      &:hover {
+        color: $orange;
+        text-decoration: none;
+      }
+    }
+
+  }
+  .images-fullsize {
+      background: darken($darkBlue, 15%);
+  }
+
+}
+
+/* $[Link Article Styles] ^article, ^links, ^menu ==================================================================== */
+article.link {
+  h2 {
+    font-size: 1em;
+    margin-top: 0;
+    line-height: 1.5;
+
+    a {
+      color: $black;
+      border-bottom: 0;
+      position: relative;
+
+      &:after {
+          content: "";
+          background-color: $lightGray;
+          position: absolute;
+          bottom: 0;
+          right: -1px;
+          left: -1px;
+          height: 1px;
+          @include transition(all 0.125s ease-in-out);
+          z-index: -1;
+      }
+
+      &:hover {
+        color: $white;
+        text-decoration: none;
+        border-bottom: 0;
+
+        &:after {
+        background-color: $orange;
+         height: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* $[Quote Article Styles] ^article, ^quotes, ^menu ==================================================================== */
+article.quote {
+  blockquote {
+    p {
+      font-size: 1.25em;
+      font-weight: 300;
+      line-height: 1.6;
+      &.author {
+        font-size: .825em;
+        font-family: $sans-serif-font;
+        text-transform: uppercase;
+        color: tint($darkBlue,70%);
+      }
+    }
+  }
+}
+
+/* $[Link Images Styles] ^article, ^images, ^menu ==================================================================== */
+article.images {
+  max-width: 960px;
+
+  .images-title {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      @include transition(all .25s ease-in-out);
+      @include transform(scale(0.9));
+  }
+
+  header {
+      background: rgba(darken($darkBlue, 10%),0.75);
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      color: $white;
+      @include transition(all .25s ease-in-out);
+      opacity: 0;
+      z-index: 10;
+
+      .images-title {
+        h2 {
+          margin: 0;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+        @include transform(scale(1.015));
+
+        .images-title {
+          @include transform(scale(1));
+        }
+    }
+
+    .permalink {
+      text-indent: -9999px;
+      opacity: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      z-index: 10;
+    }
+  }
+
+  h2 {
+      font-size: 1.5em;
+      letter-spacing: 2px;
+      margin-top: 0;
+      color: $white;
+      display: inline-block;
+      
+      a {
+        color: $white;
+
+        &:hover {
+          color: $white;
+        }
+      }
+  }
+
+  .lightbox {
+      position: relative;
+      margin: 1em 0;
+      @include transition(all .25s ease-in-out);
+
+      .images-fullsize {
+          background: darken($darkBlue, 15%);
+          box-shadow: 0 0 15px rgba($darkBlue, 0.0);
+          @include transition(all .25s ease-in-out);
+          border-radius: 2px;
+      }
+  
+      img {
+        margin: 0 auto;
+        @include transition(all .25s ease-in-out);
+        z-index: 1;
+      }
+
+      &:hover {
+          .images-fullsize {
+            @include transform(scale(1.015));
+            box-shadow: 0 0 25px rgba($darkBlue, 0.5);
+          }
+      }
+  }
+
+  .images-fullsize {
+      background: darken($darkBlue, 15%);
+  }
+
+  /*&.single {
+    header {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+        color: #505050;
+        text-shadow: none;
+        background: none;
+        .images-title {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+            h2 {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+      .permalink {
+        display: none
+      }
+    }
+    .lightbox {
+      position: relative;
+      margin: 0 0 1em;
+    }
+
+    h2 {
+      font-size: 2.75em;
+      margin-top: 0;
+      line-height: 1em;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 700;
+      color: $black;
+      padding: 0;
+      border: none;
+      display: block;
+    }
+
+    .images-title {
+      position: relative;
+      top: 0;
+    }
+  } */
+}
+
+
+article.images .images-content,
+article.images footer,
+article.images.single header {
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+/* @media { 
+} screen and (min-width: 768px) */
+@media screen and (min-width: 48em) { 
+  article {
+      padding: 3em 0
+  }
+}
+
+/* @media { 
+} screen and (min-width: 960px) */
+@media screen and (min-width: 60em) {
+  div.code {
+      max-width: 960px;
+      margin-left: -15%;
+      margin-right: -15%;
+  }
+  .embed-container {
+      max-width: 760px;
+      margin-left: -40px;
+      margin-right: -40px;
+  }
+  article.entry .images-fullsize {
+      max-width: 960px;
+      background: #000;
+      margin-left: -140px;
+      margin-right: -140px;
+  }
+  .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0;
+  }
+  #archive .wrapper{
+      max-width: 640px;
+  }
+
+  header[role="banner"] .wrapper {
+      padding-left: 5%;
+      padding-right: 5%;
+      line-height: 2em;
+      text-align: center;
+      max-width: 2200px;
+  } 
+
+  article.quote blockquote {
+      padding-left: 0;
+      position: relative;
+  }
+  article.quote blockquote:before {
+      content: '\201C';
+      font-size: 8rem;
+      text-align: center;
+      color: tint($darkBlue,95%);
+      line-height:7.5rem;
+      width: 30px;
+      display: block;
+      position: absolute;
+      top: -10px;
+      left: -60px;
+      font-family: $sans-serif-font;
+      font-weight: 400;
+  }
+  .pull-text,
+  .push-text {
+    border-top: none;
+    border-bottom: none;
+  }
+  .pull-text:before {
+    width: 25%;
+    margin-left: 75%;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    display: block;
+    content: "";
+    margin-bottom: 10px;
+  }
+  .push-text:before {
+    width: 25%;
+    margin-right: 75%;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    display: block;
+    content: "";
+    margin-bottom: 10px;
+  }
+  .push-text.wide:before,
+  .pull-text.wide:before {
+    border-top: none;
+  }
+  .pull-text {
+      float: left;
+      margin-left: -30%;
+      width: 23%;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-right: 0;
+      border-right: none;
+      text-align: right;
+  }
+  .push-text {
+      float: right;
+      margin-right: -30%;
+      width: 23%;
+      margin-left: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-right: 0;
+      border-right: none;
+      text-align: left;
+  }
+  .pull-text.wide {
+      float: left;
+      margin-left: -30%;
+      width: 35%;
+      margin-right: 5%;
+      margin-bottom: 1em;
+      margin-top: 0;
+      padding-right: 1em;
+      border-right: 1px solid $borderColor;
+      text-align: left;
+  }
+  .push-text.wide {
+      float: right;
+      margin-right: -30%;
+      width: 35%;
+      margin-left: 5%;
+      margin-bottom: 1em;
+      margin-top: 0;
+      padding-left: 1em;
+      border-left: 1px solid $borderColor;
+      text-align: left;
+  }
+}
+
+/* @media {media_subcode : 1
+} screen and (min-width: 1200px) */
+@media screen and (min-width: 75em) { 
+
+  article p.date {
+      font-size: .75em;
+  }
+  article footer {
+      font-size: .6875em;
+  }
+}

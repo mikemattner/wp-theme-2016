@@ -1,0 +1,112 @@
+/* $[Comments/Contact Form] ^forms ==================================================================== */
+#comments-surround {
+  background: #fafafa;
+}
+#comments-sec {
+    padding-bottom: 1.5em
+}
+.comments_header {
+  font-size: 1.5em;
+  line-height: 1;
+}
+.leave_a_reply {
+      font-size: 1em;
+      line-height: 1.2;
+}
+#cancel-comment-reply-link {
+  font-size: .875em;
+}
+ol.commentlist {
+    margin: 1.5em 0;
+    padding: 0;
+}
+  ol.commentlist li {
+      list-style: none;
+      padding-top: 2em;
+      padding-bottom: 0;
+      border-bottom: 1px solid $borderColor;
+  }
+    ol.commentlist li div.comment_area {
+        font-size: .875em;
+        padding-bottom: 1em;
+        position:relative;
+    }
+    ol.commentlist li ul {
+        margin: 0 0 0 2em;
+        padding: 0;
+        background: #fff;
+        background: rgba(255,255,255,0.25);
+    }
+      ol.commentlist li ul li ul {
+          margin: 0 0 0 40px;
+          padding: 0;
+          background: #fff;
+          background: rgba(255,255,255,0.25);
+      }
+      ol.commentlist li ul li {
+          border-top: 1px solid $borderColor;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: none !important;
+      }
+    ol.commentlist li  ul li div.comment_area {
+
+    }
+  ol.commentlist #respond {
+      margin: 0 1em 1em 1em;
+      padding: 1em;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid $borderColor;
+  }
+.logged_in {
+  font-size: .65em;
+  color:tint($darkBlue,60%);
+}
+.comment_date {
+    color: tint($darkBlue,60%);
+    font-family: $sans-serif-font;
+    font-size: .75em;
+    
+    a {
+      color: tint($darkBlue,60%);
+      font-family: $sans-serif-font;
+      text-decoration: none;
+    }
+}
+.comment_author {
+    @include text-size(18px, 1, 2, 3, 32px);
+    font-family: $sans-serif-font;
+    margin-bottom: 0;
+    font-weight: 700;
+    color: $darkBlue;
+}
+.avat {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    border-radius: 35px;
+    overflow: hidden;
+}
+.avatar {
+
+}
+#trackbacker h3 {
+    font-size: 1em !important
+}
+ol.trackback {
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    font-size: .875em;
+    font-family: $sans-serif-font;
+}
+  ol.trackback li {
+
+  }
+    ol.trackback li a:link,
+    ol.trackback li a:visited,
+    ol.trackback li a:active {
+    }
+    ol.trackback li a:hover {
+    }

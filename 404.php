@@ -1,8 +1,4 @@
-<?php 
-/*
-Template Name: 404
-*/
-get_header(); ?>
+<?php get_header(); ?>
     
       <div id="page_header" class="four">
       	<div class="wrapper">
@@ -13,7 +9,7 @@ get_header(); ?>
       </div>
 	<article class="clearfix">
           <h2>Nothing to see here</h2>
-          <p>I seem to have misplaced the page or file you were looking for. Perhaps you'd like to try a search below?</p>
+          <p>I seem to have misplaced the page or file you were looking for.</p>
 	</article>
 					
 <?php get_footer(); ?>		    			

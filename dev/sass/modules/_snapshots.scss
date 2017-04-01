@@ -1,0 +1,169 @@
+/*PORTFOLIO------------*/
+/* $[snapshots Images Styles] ^article, ^images, ^menu ==================================================================== */
+
+#snapshots-archive {
+  margin: 0 auto;
+  padding:  0;
+  max-width: 2200px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+article.snapshots {
+    position: relative;
+    margin: 1.5rem auto;
+    max-width: 500px;
+    padding: 0;
+    @include border-box;
+    box-shadow: 0 1px 2px rgba($darkBlue, 0.125);
+    @include transition(all .25s ease-in-out);
+
+    &:hover {
+      box-shadow: 0 2px 6px rgba($darkBlue, 0.5);
+    }
+
+    section.thumb {
+      position: relative;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+
+    header {
+      color: $white;
+      background: rgba(darken($darkBlue,10%),0.25);
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1.0;
+      text-align: left;
+
+      h2 {
+        font-size: 1.25em;
+        margin: 0;
+        color: $white;
+        font-family: $sans-serif-font;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1;
+      }
+
+      p {
+          margin: 0.25rem 0 0;
+          line-height: 1;
+          color: $white;
+          font-size: 1em;
+          font-family: $sans-serif-font;
+          font-weight: 100;
+          letter-spacing: .06em;
+          line-height: 1;
+      }
+
+      .permalink {
+          text-indent: -9999px;
+          opacity: 0;
+          display: block;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          position: absolute;
+      }
+    }
+
+    .snapshots-title {
+      color: $white;
+      position: absolute;
+      bottom: 2em;
+      left: 2em;
+      @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
+    }
+}
+
+/* @media {  
+} screen and (min-width: 600px) */
+@media screen and (min-width: 37.5em) { 
+      #snapshots-archive {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 3rem 5%;
+      }
+
+      article.snapshots {
+          width: 40%;
+          margin: 1rem;
+          overflow: hidden;
+          border-radius: 2px;
+
+          header {
+            background: rgba(darken($darkBlue,10%),0.25);
+            opacity: 0.0;
+            @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
+
+            h2 {
+              font-size: 0.875em;
+            }
+
+            p {
+              margin-bottom: 0;
+              font-size: 0.675em;
+            }
+
+            .snapshots-title {
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                padding: 1.5em 1em;
+                @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
+            }
+
+            &:hover {
+              opacity: 1.0;
+              background: rgba(darken($darkBlue,10%),0.65);
+
+              img {
+
+              }
+              
+              .snapshots-title {
+                  
+              }
+            }
+          }
+
+          img {
+           @include transition(all .325s cubic-bezier(0.165,0.84,0.44,1));
+          }
+
+          &:hover {
+            img {
+              @include transform(scale(1.1));
+            }
+          }
+      }    
+}
+
+/* @media { 
+} screen and (min-width: 960px) */
+@media screen and (min-width: 60em) { 
+  
+}
+
+/* @media {media_subcode : 1
+} screen and (min-width: 1040px) */
+@media screen and (min-width: 65em) { 
+  article.snapshots {
+      width: 20%;
+  }
+}

@@ -1,0 +1,105 @@
+/* $[Search Box] ^search, ^tags ==================================================================== */
+#archive {
+    padding: 0;
+    position: relative;
+    z-index: 9000;
+}
+.search-box {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+    background: $darkBlue;
+
+    .wrapper {
+        position: relative;
+    }
+}
+input.searchform {
+    font-size: 1.25em;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 3.5em 0 .5em;
+    margin: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid lighten($darkBlue,10%);
+    width: 100%;
+    color: lighten($darkBlue,60%);
+    font-family: $sans-serif-font;
+    font-weight: 100;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+input.searchform::-webkit-input-placeholder{
+    color: lighten($darkBlue,20%) !important;
+    opacity: 1;
+}
+input.searchform::-moz-placeholder{
+    color: lighten($darkBlue,20%) !important;
+    opacity: 1;
+}
+input.searchform:-ms-input-placeholder {
+    color: lighten($darkBlue,20%) !important;
+    opacity: 1;
+}
+input.searchform:focus,
+#searchform input.sffocus {
+    border-bottom: 1px solid lighten($darkBlue,30%);
+    -webkit-animation: shadowOutLight .225s 1 ease-in-out;
+       -moz-animation: shadowOutLight .225s 1 ease-in-out;
+            animation: shadowOutLight .225s 1 ease-in-out;
+}
+
+
+/*archive search button*/
+.searchme {
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.25em;
+    padding: 0;
+    margin: 0;
+    padding: 0 1em;
+    border: none;
+    background: none;
+    color: lighten($darkBlue,10%);
+    border: none;
+    font-family: $sans-serif-font;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    @include transform(scale(1,1));
+    @include transition(all 0.25s ease-in-out);
+
+    svg {
+      @include transition(all 0.25s ease-in-out);
+      fill: lighten($darkBlue,10%);
+      width: 25px;
+      display: inline-block;
+      margin-top: 18px;
+    }
+
+    &:hover {
+        color: $white;
+        
+        svg {
+          fill: $white;
+          @include transform(scale(1.1));
+        }
+    }
+    &:active {
+        background-color: $orange;
+        @include transform(scale(0.975,0.975));
+        -webkit-animation: shadowOutLight .225s 1 ease-in-out;
+           -moz-animation: shadowOutLight .225s 1 ease-in-out;
+                animation: shadowOutLight .225s 1 ease-in-out;
+    }
+}
+
+
+/*END Searchbox---------------*/

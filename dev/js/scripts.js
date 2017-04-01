@@ -1,22 +1,5 @@
 var $j = jQuery.noConflict();
 
-/*=====================================
-Scroll to location
-=====================================*/
-/*$j(function() {
-  $j('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $j(this.hash);
-      target = target.length ? target : $j('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $j('html,body').animate({
-          scrollTop: target.offset().top
-        }, 800);
-        return false;
-      }
-    }
-  });
-});*/
 
 /*=====================================
 Reset search form on click out if not filled
@@ -49,106 +32,18 @@ $j(document).ready(function() {
   /*=====================================
   Code highlighting
   =====================================*/
-  var highlight = false;
-  $j("pre code").parent().each(function() {
-    highlight = true;
+  $j('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
   });
-  if (highlight) {
-    $j.getScript("http://www.mikemattner.com/wp-content/themes/v11.mikemattner.com/assets/js/highlight.pack.js",
-      function() {
-        $j('pre code').each(function(i, block) {
-          hljs.highlightBlock(block);
-        });
-      });
-  }
 
   /*=====================================
   Lity Lightbox
   =====================================*/
   var lightbox = lity();
 
-  /*=====================================
-  Turn on functionality for dektop users
-  =====================================*/
-  function activateFancybox() {
-    //Activate FancyBox
-    $j(document).on('click', "a[href$='.jpg'],a[href$='.png'],a[href$='.gif']", lightbox);
-    $j("a.download_file[href$='.jpg'],a.download_file[href$='.png'],a.download_file[href$='.gif']").unbind('lightbox');
-  }
-
-  /*=====================================
-  Functionality for mobile users
-  =====================================*/
-  var l = 0;
-  function MyMobile(){
-      $j('nav[role="navigation"] ul').hide();
-      $j("#mylogo").wrap('<div class="clearfix"></div>');
-      $j("#mylogo").before("<a href='#' id='my_menu'><i class='fa fa-bars'></i></a>"); //fa fa-ellipsis-v
-      /*Show Menu*/ 
-      $j('#my_menu').toggle(function() {
-              $j('nav[role="navigation"] ul').animate({
-                 opacity: 'show',
-                 height: 'toggle'
-              }, 400);
-            }, function() {
-            $j('nav[role="navigation"] ul').animate({
-               opacity: 'hide',
-               height: 'toggle'
-            }, 400);   
-      });
-      l = 1;
-  }
-
-  /*=====================================
-  Functionality for desktop users
-  =====================================*/
-  function MyDesktop(){
-      $j("#mylogo").unbind();
-      $j('nav[role="navigation"] ul').show();
-      $j('nav[role="navigation"] ul').css('display', 'table-cell');
-      $j("#my_menu").remove();
-      $j("#mylogo").unwrap();
-      l = 0;
-  }
-
-  /*=====================================
-  Remove functionality for mobile users
-  =====================================*/
-  function deactivateFancybox() {
-    $j("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").unbind('lightbox');
-  }
-
-  /*Check window width initially---------------------*/
-  var width = $j(window).width();
-  if (width < 598) {
-    if(l == 0) {
-       MyMobile();
-    }
-    deactivateFancybox();
-  }
-  if (width > 599) {
-    if ( l == 1 ) {
-        MyDesktop();
-    }
-    activateFancybox();
-  }
-
-  /*Check window width on window resize---------------------*/
-  $j(window).resize(function() {
-    var width = $j(window).width();
-    if (width < 598) {
-      if(l == 0) {
-       MyMobile();
-      }
-      deactivateFancybox();
-    }
-    if (width > 599) {
-      if ( l == 1 ) {
-        MyDesktop();
-    }
-      activateFancybox();
-    }
-  });
+  //Activate FancyBox
+  $j(document).on('click', "a[href$='.jpg'],a[href$='.png'],a[href$='.gif']", lightbox);
+  $j("a.download_file[href$='.jpg'],a.download_file[href$='.png'],a.download_file[href$='.gif']").unbind('lightbox');
 
 });
 
@@ -236,7 +131,7 @@ function hasScrolled() {
 
 /*=====================================
 Parralaxin
-=====================================*/
+=====================================
 function mm_scroll_actions() {
     
     var scrolltop = $j(window).scrollTop(), 
@@ -257,4 +152,4 @@ function mm_scroll_actions() {
 
 $j(window).scroll(function() {
         mm_scroll_actions();
-});
+});*/
