@@ -1,85 +1,85 @@
 /* $[Header Region] ^banner, ^introduction ==================================================================== */
 header[role="banner"] {
+    display: flex;
+    justify-content: space-between;
     font-family: $sans-serif-font;
     font-weight: 100;
     width: 100%;
-    padding: 0;
+    padding: 0 5%;
     left: 0;
     z-index: 10000;
     color: rgba(255,255,255,0.95);
     font-size: 90%;
     opacity: 0;
     background: $darkBlue;
-    -webkit-animation: headerDrop .75s 1 ease-in-out;
-       -moz-animation: headerDrop .75s 1 ease-in-out;
-            animation: headerDrop .75s 1 ease-in-out;
-    -webkit-animation-fill-mode: forwards;
-       -moz-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-delay: .5s;
-       -moz-animation-delay: .5s;
-            animation-delay: .5s;
+
+    @include css3-prefix(animation, headerDrop .75s 1 ease-in-out);
+    @include css3-prefix(animation-fill-mode, forwards);
+    @include css3-prefix(animation-delay, .5s);
 }
-  header[role="banner"] .wrapper {
-      padding-left: 0;
-      padding-right: 0;
-  }
-a#mylogo, a#mylogo:visited {
-    float: left;
-    text-align: center;
-    display: table;
+a#mylogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
     padding: 0;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0;
     color: $headerTextColor;
     font-weight: 100;
     font-size: 1em;
-    position: relative;
-    letter-spacing: 2px;
-}
+    letter-spacing: 0.0675em;
 
-a#mylogo .logo-img,
-a#mylogo .logo-title {
-    display: table-cell; 
-    vertical-align: middle;
-    line-height: .875;
-    text-align: left;
-    @include transition(all 0.25s ease-out);
-  }
-a#mylogo .logo-shape {
-      fill: $darkBlue;
-      @include transition(all 0.25s ease-out);
-}
-a#mylogo .circle-shape {
-      fill: $headerTextColor;
-      @include transition(all 0.25s ease-out);
-}
-a#mylogo:hover {
-    text-decoration: none;
-    .logo-title {
-      @include transition(all 0.25s ease-out);
-      color: $orange;
+    &:visited {
+
     }
+
+    .logo-img,
+    .logo-title {
+      display: block;
+      vertical-align: middle;
+      line-height: .875;
+      text-align: left;
+      @include transition(all 0.25s ease-out);
+    }
+
+    .logo-img {
+      max-width: 45px;
+    }
+
     .logo-shape {
-      fill: $white;
+      fill: $darkBlue;
       @include transition(all 0.25s ease-out);
     }
     .circle-shape {
-      fill: $orange;
+      fill: $headerTextColor;
       @include transition(all 0.25s ease-out);
     }
-}
-header[role="banner"] a {
 
+    &:hover {
+      text-decoration: none;
+
+      .logo-title {
+        @include transition(all 0.25s ease-out);
+        color: $orange;
+      }
+      .logo-shape {
+        fill: $white;
+        @include transition(all 0.25s ease-out);
+      }
+      .circle-shape {
+        fill: $orange;
+        @include transition(all 0.25s ease-out);
+      }
+  }
 }
+
 .fixed {
     position: fixed;
     top: 0;
     z-index: 9999;
 }
 a#my_menu {
-    display: block;
-    float: right;
+    display: flex;
     padding: 0 1.5em;
     font-size: 1em;
     font-weight: 100;
@@ -89,14 +89,6 @@ a#my_menu {
     letter-spacing: .06em;
     position: relative;
 }
-/*a#my_menu i {
-  position: absolute;
-  right: 2%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        transform: translateY(-50%);
-}*/
 a#my_menu:hover {
     color: $orange;
     text-decoration: none;
@@ -152,31 +144,17 @@ nav[role="navigation"] ul {
 /* @media {  
 } screen and (min-width: 600px) */
 @media screen and (min-width: 37.5em) { 
-  header[role="banner"] {
-      padding: 0;
-  }
-  header[role="banner"] .wrapper {
-      padding-left: 5%;
-      padding-right: 5%;
-      text-align: center;
-  }
-  header[role="banner"] {
-
-  }
   nav[role="navigation"] {
-      display:table;
-      float: right;
       position: relative;
   }
   nav[role="navigation"] ul {
-      display: table-cell;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
       border-top: none;
       background: none;
   }
     nav[role="navigation"] ul li {
         display: block;
-        float: left;
         border-bottom: none;
         margin: 0 1em;
     }
@@ -205,7 +183,6 @@ nav[role="navigation"] ul {
     }
   .logo-img,
   .logo-title {
-    display: table-cell;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
