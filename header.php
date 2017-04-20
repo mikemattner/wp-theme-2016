@@ -18,10 +18,8 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandl
   
 <body <?php echo mm_body_class(); ?> lang="en">
 <header id="header" class="fixed cbp-af-header" role="banner">
-  <div class="wrapper clearfix">
     <?php get_template_part( 'components/header/site', 'branding' ); ?>
     <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-  </div>
 </header>
 <div id="page_wrapper"<?php mm_content_class(); ?>>
   <div id="content">
