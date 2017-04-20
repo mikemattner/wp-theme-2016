@@ -5,12 +5,6 @@
   
 }
 
-#page_header {
-   /*
-   background: $darkBlue url(../images/mountains.jpg) no-repeat top center;
-    */
-}
-
 .fourohfour {
     font-size: 18em;
     font-weight:700;
@@ -19,12 +13,14 @@
 }
 
 #page_header {
-    font-size: 1em;
-    padding: 10.5em 0 6.5em;
-    text-align: center;
+    font-family: "Geomanist",Helvetica,sans-serif;
     font-size: .875em;
+    font-weight: 100;
+    letter-spacing: 0.0675em;
     margin-bottom: 2em;
+    padding: 10.5em 0 6.5em;
     position: relative;
+    text-align: center;
 
     &:after {
         content: '';
@@ -75,7 +71,7 @@
         color: $headerTextColor;
   }
   p {
-      max-width: 640px;
+      max-width: 45em;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;

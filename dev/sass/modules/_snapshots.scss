@@ -53,7 +53,7 @@ article.snapshots {
         color: $white;
         font-family: $sans-serif-font;
         font-weight: 700;
-        letter-spacing: 0;
+        letter-spacing: 0.0675em;
         line-height: 1;
       }
 
@@ -64,8 +64,15 @@ article.snapshots {
           font-size: 1em;
           font-family: $sans-serif-font;
           font-weight: 100;
-          letter-spacing: .06em;
-          line-height: 1;
+          letter-spacing: 0.0675em;
+          line-height: 1.4;
+      }
+
+      .snapshots-date {
+        color: rgba($white, 0.75);
+        font-size: 0.5em;
+        margin-top: 1rem;
+        text-transform: uppercase;
       }
 
       .permalink {
@@ -81,10 +88,17 @@ article.snapshots {
     }
 
     .snapshots-title {
+      background-image:
+                  linear-gradient(
+                    to top, 
+                    rgba(darken($darkBlue,10%),0.95), rgba(0,0,0,0)
+                  );
       color: $white;
       position: absolute;
-      bottom: 2em;
-      left: 2em;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2em;
       @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
     }
 }
@@ -94,20 +108,20 @@ article.snapshots {
 @media screen and (min-width: 37.5em) { 
       #snapshots-archive {
         display: flex;
+        align-content: flex-start;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 3rem 5%;
       }
 
       article.snapshots {
           width: 40%;
-          margin: 1rem;
+          margin: 5%;
           overflow: hidden;
           border-radius: 2px;
 
           header {
-            background: rgba(darken($darkBlue,10%),0.25);
-            opacity: 0.0;
+            background: rgba(darken($darkBlue,10%),0.15);
             @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
 
             h2 {
@@ -117,27 +131,46 @@ article.snapshots {
             p {
               margin-bottom: 0;
               font-size: 0.675em;
+              font-weight: 100;
+              line-height: 1.4
             }
 
             .snapshots-title {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                text-align: center;
                 padding: 1.5em 1em;
                 @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
+
+                h2 {
+                  letter-spacing: 0.0675em;
+                  line-height: 1.2;
+                }
+            }
+
+            .snapshots-date {
+              color: rgba($white, 0.75);
+              font-size: 0.5em;
+              margin-top: 1rem;
+              text-transform: uppercase;
+            }
+
+            .snapshots-info {
+              max-height: 0;
+              opacity: 0;
+              visibility: hidden;
+
+              @include transition(all 0.75s cubic-bezier(0.165,0.84,0.44,1));
             }
 
             &:hover {
-              opacity: 1.0;
-              background: rgba(darken($darkBlue,10%),0.65);
-
-              img {
-
-              }
+              background: rgba(darken($darkBlue,10%),0.75);
               
-              .snapshots-title {
-                  
+              .snapshots-info {
+                opacity: 1;      
+                visibility: visible;
+                max-height: 150px;
+                @include transition(all 1s ease-out);
               }
             }
           }
@@ -165,5 +198,6 @@ article.snapshots {
 @media screen and (min-width: 65em) { 
   article.snapshots {
       width: 20%;
+      margin: 2.5%;
   }
 }
