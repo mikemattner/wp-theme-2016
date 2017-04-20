@@ -14,33 +14,14 @@ a {
 }
 
 article section a {
-    border-bottom: 0;
+    border-bottom: 1px solid $lightGray;
     text-decoration: none;
-    display: inline-block;
     position: relative;
 
-    &:after {
-        content: "";
-        background-color: $lightGray;
-        position: absolute;
-        bottom: 0;
-        right: -1px;
-        left: -1px;
-        height: 1px;
-        @include transition(all 0.125s ease-in-out);
-        z-index: -1;
-    }
-
     &:hover {
+      border-bottom: 1px solid $orange;
       text-decoration: none;
-      background-color: none;
-      color: $white;
-
-      &:after {
-        height: 100%;
-        background-color: $orange;
-      }
-
+      color: $orange;
     }
 }
 #footer .hire_me a {
@@ -82,5 +63,18 @@ article section a {
 .gallery a {
     &:after {
         display: none;
+    }
+}
+
+.push-text a,
+.pull-text a {
+    border-bottom: 1px solid $lightGray;
+    text-decoration: none;
+    position: relative;
+
+    &:hover {
+      border-bottom: 1px solid $orange;
+      text-decoration: none;
+      color: $orange;
     }
 }

@@ -152,31 +152,14 @@ article.link {
     line-height: 1.5;
 
     a {
+      border-bottom: 1px solid $lightGray;
       color: $black;
-      border-bottom: 0;
-      position: relative;
-
-      &:after {
-          content: "";
-          background-color: $lightGray;
-          position: absolute;
-          bottom: 0;
-          right: -1px;
-          left: -1px;
-          height: 1px;
-          @include transition(all 0.125s ease-in-out);
-          z-index: -1;
-      }
+      text-decoration: none;
 
       &:hover {
-        color: $white;
+        border-bottom: 1px solid $orange;
+        color: $orange;
         text-decoration: none;
-        border-bottom: 0;
-
-        &:after {
-        background-color: $orange;
-         height: 100%;
-        }
       }
     }
   }
