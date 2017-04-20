@@ -9,7 +9,7 @@ get_header(); ?>
       <div id="page_header" class="archives-master">
       	<div class="wrapper">
           <div class="fade-in-up">
-           <h1 class="pagetitle">Archives</h1>
+           <h1 class="pagetitle"><span>Search My</span> Archives</h1>
             <section>
               <ul class="cats">
                 <?php listCats(); ?>       
