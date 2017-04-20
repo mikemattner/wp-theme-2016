@@ -45,6 +45,13 @@
       margin-left: auto;
       margin-right: auto;
 
+      span {
+        font-size: 0.75rem;
+        display: block;
+        font-weight: 100;
+        margin-bottom: 0.75em;
+      }
+
       &:after {
         width: 20%;
         margin-left: 40%;
