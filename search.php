@@ -6,7 +6,7 @@
 		    <div id="page_header" class="archives-search">
 		    	<div class="wrapper">
                 <div class="fade-in-up">
-                   <h1 class="pagetitle">Search Results for &#8216;<?php the_search_query(); ?>&#8217;</h1>
+                   <h1 class="pagetitle"><span>Search Results for</span> &#8216;<?php the_search_query(); ?>&#8217;</h1>
                 </div>
                 </div>
             </div>
