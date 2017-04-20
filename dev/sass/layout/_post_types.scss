@@ -175,7 +175,6 @@ article.quote {
       &.author {
         font-size: .825em;
         font-family: $sans-serif-font;
-        text-transform: uppercase;
         color: tint($darkBlue,70%);
       }
     }
@@ -401,7 +400,7 @@ article.images.single header {
       top: -10px;
       left: -60px;
       font-family: $sans-serif-font;
-      font-weight: 400;
+      font-weight: 100;
   }
   .pull-text,
   .push-text {

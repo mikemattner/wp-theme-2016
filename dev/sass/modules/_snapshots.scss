@@ -156,7 +156,7 @@ article.snapshots {
             }
 
             .snapshots-info {
-              max-height: 0;
+              height: 0;
               opacity: 0;
               visibility: hidden;
 
@@ -165,11 +165,11 @@ article.snapshots {
 
             &:hover {
               background: rgba(darken($darkBlue,10%),0.75);
-              
+
               .snapshots-info {
                 opacity: 1;      
                 visibility: visible;
-                max-height: 150px;
+                height: 7vh;
                 @include transition(all 1s ease-out);
               }
             }
