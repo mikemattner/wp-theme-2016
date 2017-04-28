@@ -618,7 +618,7 @@ $j(document).ready(function() {
 
 /*=====================================
 Menubar animations
-=====================================*/
+=====================================
 var cbpAnimatedHeader = (function() {
 
   var docElem = document.documentElement,
@@ -651,7 +651,7 @@ var cbpAnimatedHeader = (function() {
 
   init();
 
-})();
+})();*/
 
 
 /*==========================================

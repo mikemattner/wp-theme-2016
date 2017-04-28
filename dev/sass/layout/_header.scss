@@ -1,17 +1,24 @@
 /* $[Header Region] ^banner, ^introduction ==================================================================== */
 header[role="banner"] {
+    background: $darkBlue;
+    color: rgba(255,255,255,0.95);
     display: flex;
     justify-content: space-between;
     font-family: $sans-serif-font;
-    font-weight: 100;
-    width: 100%;
-    padding: 0 5%;
-    left: 0;
-    z-index: 10000;
-    color: rgba(255,255,255,0.95);
     font-size: 90%;
+    font-weight: 100;
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $headerHeightMobile;
+    overflow: hidden;
     opacity: 0;
-    background: $darkBlue;
+    width: 100%;
+    z-index: 10000;
+
+    @include transition(all 0.25s ease-out);
 
     @include css3-prefix(animation, headerDrop .75s 1 ease-in-out);
     @include css3-prefix(animation-fill-mode, forwards);
@@ -44,6 +51,12 @@ a#mylogo {
 
     .logo-img {
       max-width: 45px;
+      height: 30px;
+      padding-right: 10px;
+
+      svg {
+        height: 25px;
+      }
     }
 
     .logo-shape {
@@ -152,6 +165,7 @@ nav[role="navigation"] ul {
       align-items: center;
       border-top: none;
       background: none;
+      height: $headerHeightDesktop;
   }
     nav[role="navigation"] ul li {
         display: block;
@@ -189,113 +203,9 @@ nav[role="navigation"] ul {
   }
   .logo-img {
     padding-right: 10px;
-  }
-
-  .cbp-af-header {
-    /*background: rgba(255,255,255,0.95);*/
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-    height: 80px;
-    overflow: hidden;
-    -webkit-transition: height 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-    -moz-transition: height 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-    transition: height 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-    -webkit-transition: top ease 0.5s;
-        -moz-transition: top ease 0.5s;
-                   transition: top ease 0.5s;
-  }
-
-  /* We just have one-lined elements, so we'll center the elements with the line-height set to the height of the header */
-  .cbp-af-header #mylogo,
-  .cbp-af-header nav ul {
-    height: 80px;
-  }
-  .cbp-af-header.nav-up {
-    top: -80px !important;
-  }
-
-  .cbp-af-header .logo-img {
-    height: 80px;
-    -webkit-transition: all 0.25s ease-in-out;
-       -moz-transition: all 0.25s ease-in-out;
-            transition: all 0.25s ease-in-out;
-    svg {
-      display: block;
-      height: 30px;
-      -webkit-transition: all 0.25s ease-in-out;
-         -moz-transition: all 0.25s ease-in-out;
-              transition: all 0.25s ease-in-out;
-    }
-  }
-
-  /* Transitions and class for reduced height */
-  .cbp-af-header #mylogo,
-  .cbp-af-header nav a {
-    -webkit-transition: all 0.25s ease-in-out;
-       -moz-transition: all 0.25s ease-in-out;
-            transition: all 0.25s ease-in-out;
-  }
-
-  .cbp-af-header.cbp-af-header-shrink {
-    height: 60px;
-    font-size: 80%;
-    /*border-bottom: 1px solid $borderColor;*/
-  }
-  .cbp-af-header.cbp-af-header-shrink.nav-up {
-    top: -60px !important;
-  }
-
-  .cbp-af-header.cbp-af-header-shrink #mylogo,
-  .cbp-af-header.cbp-af-header-shrink nav ul {
-    height: 60px;
-  }
-
-  .cbp-af-header.cbp-af-header-shrink .logo-img {
-    height: 60px;
+    height: $headerHeightDesktop;
     svg {
       height: 25px;
-    }
-  }
-}
-/* Example Media Queries */
-@media screen and (max-width: 37.5em) {
-  .cbp-af-header {
-    height: 60px
-  }
-  .cbp-af-header.cbp-af-header-shrink{
-    height: 60px;
-  }
-  .cbp-af-header nav a,
-  .cbp-af-header #mylogo,
-  .cbp-af-header #my_menu,
-  .cbp-af-header.cbp-af-header-shrink #mylogo,
-  .cbp-af-header.cbp-af-header-shrink #my_menu,
-  .cbp-af-header.cbp-af-header-shrink nav a {
-    line-height: 60px;
-  }
-
-  .cbp-af-header nav {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-  }
-
-  .cbp-af-header #mylogo,
-  .cbp-af-header #my_menu {
-    height: 60px;
-  }
-  .cbp-af-header #mylogo {
-    padding-left: 1.5em;
-  }
-  .cbp-af-header .logo-img,
-  .cbp-af-header.cbp-af-header-shrink .logo-img {
-    width: 30px;
-    height: 40px;
-    svg {
-      height: 26px;
     }
   }
 }
