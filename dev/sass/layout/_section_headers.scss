@@ -40,6 +40,8 @@
   .pagetitle {
       font-family: $sans-serif-font;
       font-weight: 700;
+      font-size: 2em;
+      line-height: 1.2;
       color: $white;
       max-width: 960px;
       margin-left: auto;
@@ -125,8 +127,21 @@
       font-size: 1em;
 
       .pagetitle {
-        font-size: 3.5em;
-        line-height: 1.0;
+        font-size: 2.25em;
+        line-height: 1;
+      }
+  }
+}
+
+/* @media {  
+} screen and (min-width: 960px) */
+@media screen and (min-width: 60em) { 
+  #page_header {
+      font-size: 1em;
+
+      .pagetitle {
+        font-size: 4vw;
+        line-height: 1.2;
       }
   }
 }
