@@ -140,7 +140,7 @@ article.snapshots {
                 left: 0;
                 right: 0;
                 padding: 1.5em 1em;
-                @include transition(all .75s cubic-bezier(0.165,0.84,0.44,1));
+                @include transition(all .25s cubic-bezier(0.165,0.84,0.44,1));
 
                 h2 {
                   letter-spacing: 0.0675em;
@@ -160,7 +160,7 @@ article.snapshots {
               opacity: 0;
               visibility: hidden;
 
-              @include transition(all 0.75s cubic-bezier(0.165,0.84,0.44,1));
+              @include transition(all 0.5s cubic-bezier(0.165,0.84,0.44,1));
             }
 
             &:hover {
@@ -170,7 +170,7 @@ article.snapshots {
                 opacity: 1;      
                 visibility: visible;
                 height: 7vh;
-                @include transition(all 1s ease-out);
+                @include transition(all .25s ease-out);
               }
             }
           }
