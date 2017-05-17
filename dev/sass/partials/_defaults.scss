@@ -11,7 +11,6 @@ body {
   background: $white;
   font-family: $serif-font;
   color: $textColor;
-  font-size: 100%;
   line-height: $defaultLineHeight;
   word-wrap: break-word;
   overflow-y: scroll;
@@ -68,7 +67,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $darkBlue;
 }
-
+/*
 h1 {
   @include text-size(42px, 4, 9, 15, 54px);
   //margin-bottom: $defaultLineHeight;
@@ -98,7 +97,7 @@ h6 {
   @include text-size(18px, 1, 2, 3, 32px);
   //margin-bottom: $defaultLineHeight;
 }
-
+*/
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -179,67 +178,3 @@ kbd, tt {
   padding: 5px;
   @include text-size(16px, 1, 2, 3, 28px);
 }*/
-
-/* @media {  
-} screen and (min-width: 600px) */
-@media screen and (min-width: 37.5em) { 
-  body {
-      font-size: 100%
-  }
-}
-
-/* @media { 
-} screen and (min-width: 768px) */
-@media screen and (min-width: 48em) { 
-  body {
-      font-size: 110%
-  }
-}
-
-/* @media { 
-} screen and (min-width: 960px) */
-@media screen and (min-width: 60em) { 
-  body {
-      font-size: 110%
-  }
-}
-
-/* @media {   
-} screen and (min-width: 984px) */
-@media screen and (min-width: 61.5em) { 
-  body {
-      font-size: 110%
-  }
-}
-
-/* @media {   
-} screen and (min-width: 1080px) */
-@media screen and (min-width: 67.5em) { 
-  body {
-      font-size: 110%
-  }
-}
-
-/* @media {media_subcode : 1
-} screen and (min-width: 1200px) */
-@media screen and (min-width: 75em) { 
-  body {
-      font-size: 115%
-  }
-}
-
-/* @media { 
-} screen and (min-width: 1392px) */
-@media screen and (min-width: 87em) { 
-  body {
-      font-size: 120%
-  }
-}
-
-/* @media { 
-} screen and (min-width: 1680px) */
-@media screen and (min-width: 105em) { 
-  body {
-      font-size: 120%
-  }
-}
