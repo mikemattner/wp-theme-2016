@@ -42,7 +42,7 @@ article {
 
     p.date {
       color: $metaGray;
-      font-size: .825em;
+      font-size: .6875em;
       margin: 0 0 0.5em;
       font-family: $sans-serif-font;
       text-align: center;
@@ -117,7 +117,7 @@ article.entry {
   h2 {
     margin-top: 0;
     line-height: 1em;
-    font-size: calc(100% + 2vw);
+    font-size: 2.25em;
 
     &:after {
       width: 20%;
@@ -238,7 +238,6 @@ article.images {
   }
 
   h2 {
-      font-size: calc(100% + 1.25vw);
       letter-spacing: 2px;
       margin-top: 0;
       color: $white;
@@ -471,17 +470,5 @@ article.images.single header {
       padding-left: 1em;
       border-left: 1px solid $borderColor;
       text-align: left;
-  }
-}
-
-/* @media {media_subcode : 1
-} screen and (min-width: 1200px) */
-@media screen and (min-width: 75em) { 
-
-  article p.date {
-      font-size: .75em;
-  }
-  article footer {
-      font-size: .6875em;
   }
 }
