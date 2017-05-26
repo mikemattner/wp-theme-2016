@@ -1,4 +1,4 @@
-    <nav role="navigation">
+    <nav role="navigation" id="site-navigation">
         <ul>
             <?php 
                 $args = array(
