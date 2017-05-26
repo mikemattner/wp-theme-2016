@@ -1,5 +1,36 @@
 var $j = jQuery.noConflict();
 
+window.onscroll = function() {
+    var doc = document.documentElement;
+    var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
+    var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+    var body = document.getElementsByTagName("body");
+    
+    if(!body[0].classList.contains('nav-open')) {
+        localStorage.scrollLeft = left;
+        localStorage.scrollTop = top;
+    }
+
+    var scrollLeft = localStorage.getItem("scrollLeft");
+    var scrollTop = localStorage.getItem("scrollTop");
+}
+
+document.querySelector('.nav-toggle').onclick = function (e) {
+  var nav = document.getElementById('site-navigation');
+  var body = document.getElementsByTagName("body");
+
+  body[0].classList.toggle('nav-open');
+  nav.classList.toggle('show');
+  this.classList.toggle('show');
+
+  if(!body[0].classList.contains('nav-open')) {
+    var scrollLeft = localStorage.getItem("scrollLeft");
+    var scrollTop = localStorage.getItem("scrollTop");
+    window.scrollTo(scrollLeft, scrollTop);
+  }
+
+  e.preventDefault();
+}
 
 /*=====================================
 Reset search form on click out if not filled

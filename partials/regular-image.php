@@ -4,6 +4,9 @@
             <header>
 		          <section class="images-title">
                   <h2><?php the_title(); ?></h2>
+                  <section class="images-content">
+                    <?php the_content('Read the rest of this entry &raquo;'); ?>
+                  </section>
               </section>
               <a href="<?php the_permalink() ?>" class="permalink">Permalink</a>
             </header>
@@ -15,12 +18,9 @@
               ?>
             </section>
           </section>
-          <?php if(is_single()){ ?>
-          <section class="images-content">
-            <?php the_content('Read the rest of this entry &raquo;'); ?>
-				    <?php get_references(); ?>
+          <section class="images__references">
+            <?php get_references(); ?>
           </section>
-          <?php } ?>
           <footer>
             <?php get_template_part( 'components/blog/post', 'footer-meta' ); ?>
           </footer>

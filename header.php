@@ -19,8 +19,10 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandl
 <body <?php echo mm_body_class(); ?> lang="en">
 <header id="header" role="banner">
     <?php get_template_part( 'components/header/site', 'branding' ); ?>
-    <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+    <button type="button" class="nav-toggle"><span>Menu</span></button>
 </header>
+<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+
 <div id="page_wrapper"<?php mm_content_class(); ?>>
   <div id="content">
   <?php  if (is_home()) { 
