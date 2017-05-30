@@ -83,6 +83,9 @@ button.nav-toggle {
     &:before {
         background-color: $white;
         top: 50%;
+        width: 30px;
+        left: 5px;
+        right: 5px;
         transition-delay: 0.15s;
         -ms-transform: rotate(45deg); /* IE 9 */
         -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
@@ -92,8 +95,9 @@ button.nav-toggle {
     &:after {
         background-color: $white;
         top: 50%;
-        width: 40px;
-        left: 0;
+        width: 30px;
+        left: 5px;
+        right: 5px;
         transition-delay: 0.15s;
         -ms-transform: rotate(-45deg); /* IE 9 */
         -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
@@ -221,7 +225,7 @@ nav[role="navigation"] {
   background: $darkBlue;
   visibility: hidden;
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: 60px;
   left: 0;
   width: 100vw;
