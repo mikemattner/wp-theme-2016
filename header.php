@@ -20,8 +20,8 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandl
 <header id="header" role="banner">
     <?php get_template_part( 'components/header/site', 'branding' ); ?>
     <button type="button" class="nav-toggle"><span>Menu</span></button>
+    <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 </header>
-<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 
 <div id="page_wrapper"<?php mm_content_class(); ?>>
   <div id="content">
