@@ -131,10 +131,10 @@ button {
     outline: none;
 }
 
-/*
+
 ol, ul {
-  //margin-left: 48px;
-  //margin-bottom: $defaultLineHeight;
+  margin-left: 1.5rem;
+  margin-bottom: $defaultLineHeight;
 }
 
 ul ul, ul ol, ol ol, ol ul {
@@ -149,7 +149,7 @@ ol {
 ul {
   list-style: disc outside none;
 }
-
+/*
 cite, q, em, var {
   font-style: italic;
 }
