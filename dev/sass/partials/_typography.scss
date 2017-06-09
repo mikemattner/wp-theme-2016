@@ -5,14 +5,11 @@
 ------------------------------------*/
 /**/
 html {
-  font-size: 18px;
-  body {
-      @media (min-width: 768px) {
-        font-size: 110%;
-      }
-      @media (min-width: 1392px) {
-        font-size: 115%;
-      }
+
+  font-size: calc(14px + 0.5vw);
+  line-height: calc(1.1em + 0.5vw);
+  @media (min-width: 1400px) {
+        font-size: 21px;
   }
 }
 .normal,
