@@ -49,7 +49,9 @@ function mm_queue_js() {
 function mm_queue_css() {
   if ( !is_admin() ) {
     // register stylesheet
-    wp_register_style( 'mm-css', get_template_directory_uri() . '/assets/css/production.min.css', array(), '2015-11-04T15:38', 'all' );
+    //wp_register_style( 'mm-google-fonts', '//fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i', array(), '', 'all' );
+    //wp_enqueue_style( 'mm-google-fonts' );
+    wp_register_style( 'mm-css', get_template_directory_uri() . '/assets/css/production.min.css', array(), '2017-06-19T15:38', 'all' );
     wp_enqueue_style( 'mm-css' );
   }
 }
