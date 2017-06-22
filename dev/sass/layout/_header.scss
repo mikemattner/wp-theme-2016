@@ -220,19 +220,21 @@ a#my_menu:hover {
 
 /* $[Primary Navigation] ^navigation, ^menu ==================================================================== */
 nav[role="navigation"] {
-  background: $darkBlue;
+  background: rgba($darkBlue,0.975);
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  top: 60px;
   left: 0;
   width: 100vw;
   height: 100vh;
   display: none;
   z-index: 1000;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   font-family: $sans-serif-font;
+  @include transition(all 0.25s ease-out);
 
   &.show {
     visibility: visible;

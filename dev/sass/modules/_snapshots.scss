@@ -184,6 +184,7 @@ article.snapshots {
           &:hover {
             img {
               @include transform(scale(1.1));
+              @include css3-prefix(filter, blur(3px))
             }
           }
       }    

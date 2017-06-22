@@ -49,7 +49,9 @@ function mm_queue_js() {
 function mm_queue_css() {
   if ( !is_admin() ) {
     // register stylesheet
-    wp_register_style( 'mm-css', get_template_directory_uri() . '/assets/css/production.min.css', array(), '2015-11-04T15:38', 'all' );
+    wp_register_style( 'mm-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Slab:300,700', array(), '', 'all' );
+    wp_enqueue_style( 'mm-google-fonts' );
+    wp_register_style( 'mm-css', get_template_directory_uri() . '/assets/css/production.min.css', array(), '2017-06-19T15:38', 'all' );
     wp_enqueue_style( 'mm-css' );
   }
 }
@@ -57,7 +59,7 @@ function mm_queue_css() {
 
 //Loading TypeKit and Google Analytics
 function mm_ext() {
-  mm_typekit();
+  //mm_typekit();
   mm_google_analytics();
 }
 
