@@ -217,7 +217,6 @@ article.images {
 
       &:hover {
         opacity: 1;
-        @include transform(scale(1.015));
 
         .images-title {
           @include transform(scale(1));
@@ -263,6 +262,7 @@ article.images {
           box-shadow: 0 0 15px rgba($darkBlue, 0.0);
           @include transition(all .25s ease-in-out);
           border-radius: 2px;
+          overflow: hidden;
       }
   
       img {
@@ -273,8 +273,11 @@ article.images {
 
       &:hover {
           .images-fullsize {
-            @include transform(scale(1.015));
             box-shadow: 0 0 25px rgba($darkBlue, 0.5);
+            img {
+              @include css3-prefix(filter, blur(1px));
+              @include transform(scale(1.015));
+            }
           }
       }
   }
