@@ -192,7 +192,7 @@ article.images {
       top: 50%;
       width: 100%;
       @include transition(all .25s ease-in-out);
-      @include transform(scale(0.9));
+      @include transform(scale(0.9) translateY(-50%));
   }
 
   header {
@@ -224,7 +224,7 @@ article.images {
         opacity: 1;
 
         .images-title {
-          @include transform(scale(1));
+          @include transform(scale(1) translateY(-50%));
         }
     }
 
