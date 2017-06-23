@@ -8,8 +8,8 @@ html {
 
   font-size: calc(14px + 0.5vw);
   line-height: calc(1.1em + 0.5vw);
-  @media (min-width: 1400px) {
-        font-size: 21px;
+  @media (min-width: 1200px) {
+        font-size: 20px;
   }
 }
 .normal,

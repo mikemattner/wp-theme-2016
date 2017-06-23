@@ -134,6 +134,10 @@ header[role="banner"] {
     @include css3-prefix(animation, headerDrop .75s 1 ease-in-out);
     @include css3-prefix(animation-fill-mode, forwards);
     @include css3-prefix(animation-delay, .5s);
+
+    &.nav-open {
+      background: transparent;
+    }
 }
 a#mylogo {
     display: flex;
