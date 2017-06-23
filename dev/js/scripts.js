@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-window.onscroll = function() {
+/*window.onscroll = function() {
     var doc = document.documentElement;
     var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
     var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
@@ -13,21 +13,23 @@ window.onscroll = function() {
 
     var scrollLeft = localStorage.getItem("scrollLeft");
     var scrollTop = localStorage.getItem("scrollTop");
-}
+}*/
 
 document.querySelector('.nav-toggle').onclick = function (e) {
   var nav = document.getElementById('site-navigation');
+  var header = document.getElementById('header');
   var body = document.getElementsByTagName("body");
 
   body[0].classList.toggle('nav-open');
   nav.classList.toggle('show');
+  header.classList.toggle('nav-open');
   this.classList.toggle('show');
 
-  if(!body[0].classList.contains('nav-open')) {
+  /*if(!body[0].classList.contains('nav-open')) {
     var scrollLeft = localStorage.getItem("scrollLeft");
     var scrollTop = localStorage.getItem("scrollTop");
     window.scrollTo(scrollLeft, scrollTop);
-  }
+  }*/
 
   e.preventDefault();
 }
