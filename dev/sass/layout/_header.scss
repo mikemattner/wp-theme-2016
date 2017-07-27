@@ -20,7 +20,7 @@ button.nav-toggle {
       width: 40px;
       top: 35%;
       background-color: $headerTextColor;
-      height: 3px;
+      height: 4px;
       display: block;
       transition-delay: 0.15s;
       @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
@@ -34,7 +34,7 @@ button.nav-toggle {
       top: 65%;
       left: 5px;
       background-color: $headerTextColor;
-      height: 3px;
+      height: 4px;
       display: block;
       transition-delay: 0.15s;
       @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
@@ -47,7 +47,7 @@ button.nav-toggle {
       left: 10px;
       right: 0;
       background-color: $headerTextColor;
-      height: 3px;
+      height: 4px;
       display: block;
       border-radius: 4px;
       transition-delay: 0;
