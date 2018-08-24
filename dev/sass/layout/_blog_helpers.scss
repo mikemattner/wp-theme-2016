@@ -2,28 +2,33 @@
 // blog post helpers
 // ----------------------------------------------------------------------------------------------------------------
 
-/* $[Resume Related] ==================================================================== */
-.quick-note {
+.personal-image {
+  margin: 0 0 1.5rem;
+  box-shadow: 0 0 25px rgba($darkBlue, 0.25);
+  border-radius:2px;
+  overflow:hidden;
+  position:relative;
+  @include transition(all .25s ease-in-out);
+  
+  .caption {
+    position: absolute;
+    font-size: 0.75rem;
+    margin: 0;
+    color: $white;
     font-family: $sans-serif-font;
-    font-weight: 300;
-    font-size: .75em;
-    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.0675em;
+    line-height: 1;
+    bottom: 0;
+    right: 0;
     padding: 1em;
-    background: $lightGray;
-    border: 1px solid $darkBorder;
-    color: $metaGray;
-}
+    @include transition(all .25s cubic-bezier(0.165,0.84,0.44,1));
+  }
 
-.brands {
-  font-family: $sans-serif-font;
-}
+  &:hover {
+    box-shadow: 0 5px 25px rgba($darkBlue, 0.5);
+  }
 
-ul.skills {
-  list-style: none;
-}
-ul.skills li {
-  margin: 0;
-  padding: 0;
 }
 
 /* $[Election Information/Charts] ==================================================================== */

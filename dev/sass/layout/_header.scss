@@ -13,32 +13,28 @@ button.nav-toggle {
   outline: none;
   text-decoration: none;
   text-indent: -9999px;
+  
+  &:before,
+  &:after {
+    content: "";
+    background-color: $headerTextColor;
+    display: block;
+    position: absolute;
+    border-radius: 4px;
+    height: 4px;
+    transition-delay: 0.15s;
+    @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+  }
 
   &:before {
-      content: "";
-      position: absolute;
       width: 40px;
       top: 35%;
-      background-color: $headerTextColor;
-      height: 4px;
-      display: block;
-      transition-delay: 0.15s;
-      @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
-      border-radius: 4px;
   }
 
   &:after {
-      content: "";
-      position: absolute;
       width: 35px;
       top: 65%;
       left: 5px;
-      background-color: $headerTextColor;
-      height: 4px;
-      display: block;
-      transition-delay: 0.15s;
-      @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
-      border-radius: 4px;
   }
 
   span {
@@ -55,52 +51,38 @@ button.nav-toggle {
   }
 
   &:hover {
-    &:before {
-        width: 40px;
-        background-color: $white;
-        @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
-        transition-delay: 0;
-    }
-
+    &:before,
     &:after {
         width: 40px;
-        left: 0;
         background-color: $white;
-        @include transition(all 0.12s cubic-bezier(0.68, -0.55, 0.265, 1.55));
         transition-delay: 0;
-        border-radius: 4px;
+    }
+    &:after {
+        left: 0;
     }
 
     span {
         left: 0;
         right: 0;
         background-color: $white;
-        @include transition(all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55));
     }    
   }
 
   &.show {
-    &:before {
-        background-color: $white;
-        top: 50%;
-        width: 30px;
-        left: 5px;
-        right: 5px;
-        transition-delay: 0.15s;
-        -ms-transform: rotate(45deg); /* IE 9 */
-        -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-        transform: rotate(45deg);
-    }
-
+    &:before,
     &:after {
         background-color: $white;
         top: 50%;
         width: 30px;
         left: 5px;
         right: 5px;
-        transition-delay: 0.15s;
-        -ms-transform: rotate(-45deg); /* IE 9 */
-        -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+        transition-delay: 0s, 0.15s;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
         transform: rotate(-45deg);
     }
 
@@ -127,7 +109,7 @@ header[role="banner"] {
     height: $headerHeightMobile;
     opacity: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 101;
 
     @include transition(all 0.25s ease-out);
 
@@ -135,15 +117,22 @@ header[role="banner"] {
     @include css3-prefix(animation-fill-mode, forwards);
     @include css3-prefix(animation-delay, .5s);
 
-    &.nav-open {
-      background: transparent;
+
+    @media screen and (min-width: 768px) {
+      &.nav-up {
+        @include css3-prefix(animation, headerUp .5s 1 ease-in-out);
+        @include css3-prefix(animation-fill-mode, forwards);
+      }
+      &.nav-down {
+        @include css3-prefix(animation, headerDrop .5s 1 ease-in-out);
+        @include css3-prefix(animation-fill-mode, forwards);
+      }
     }
 }
-a#mylogo {
+.mylogo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
     padding: 0;
     margin: 0;
     color: $headerTextColor;
@@ -163,6 +152,11 @@ a#mylogo {
       text-align: left;
       @include transition(all 0.25s ease-out);
     }
+
+    // .logo-title {
+    //   opacity: 0;
+    //   transform: translateX(-50%);
+    // }
 
     .logo-img {
       max-width: 45px;
@@ -201,53 +195,57 @@ a#mylogo {
   }
 }
 
-.fixed {
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-}
-a#my_menu {
-    display: flex;
-    padding: 0 1.5em;
-    font-size: 1em;
-    font-weight: 100;
-    text-transform: uppercase;
-    text-align: center;
-    color: $headerTextColor;
-    letter-spacing: .06em;
-    position: relative;
-}
-a#my_menu:hover {
-    color: $orange;
-    text-decoration: none;
-}
-
 /* $[Primary Navigation] ^navigation, ^menu ==================================================================== */
 nav[role="navigation"] {
   background: rgba($darkBlue,0.975);
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
   display: none;
-  z-index: 1000;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: $sans-serif-font;
-  @include transition(all 0.25s ease-out);
+  box-shadow: 0 0 25px rgba($darkBlue, 0.5);
+  @include transition(all 0.25s 0.5s ease-out);
 
   &.show {
     visibility: visible;
+    transform: translateX(0);
     opacity: 1;
+    @include transition(all 0.25s 0s ease-out);
+
 
     ul {
+
+      li {
+      transform: translateX(0);
       opacity: 1;
-      @include transform(scale(1));
+
+        &:nth-child(1) {
+          @include transition(all 0.25s 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+        &:nth-child(2) {
+          @include transition(all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+        &:nth-child(3) {
+          @include transition(all 0.25s 0.375s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+        &:nth-child(4) {
+          @include transition(all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+      }
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(50vw);
+    width: 550px;
   }
 }
 nav[role="navigation"] ul {
@@ -258,18 +256,29 @@ nav[role="navigation"] ul {
     font-weight: 100;
     text-align: center;
     letter-spacing: 2px;
-    transition-delay: 0.75s;
-    opacity: 0;
     width: 100%;
-    @include transition(all 0.25s ease-out);
-    @include transform(scale(0.5));
-
 }
   nav[role="navigation"] ul li {
       display: block;
       padding: 0;
       margin: 0;
       position: relative;
+      transform: translateX(200px);
+      opacity: 0;
+
+        &:nth-child(1) {
+          @include transition(all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+        &:nth-child(2) {
+          @include transition(all 0.25s 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+        &:nth-child(3) {
+          @include transition(all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+        &:nth-child(4) {
+          @include transition(all 0.25s 0.375s cubic-bezier(0.68, -0.55, 0.265, 1.55));
+        }
+
   }
     nav[role="navigation"] ul li a {
         display: block;
@@ -288,20 +297,34 @@ nav[role="navigation"] ul {
   body.notebook nav[role="navigation"] ul li.menu-item-6512 a,
   body.home nav[role="navigation"] ul li.menu-item-6512 a,
   body.work nav[role="navigation"] ul li.menu-item-6167 a {
-    font-weight: 700;      
+    color: $white;
+    font-weight: 700;
+    // &:after {
+    //     background-color: $white;
+    // }      
   }
   nav[role="navigation"] ul li.current-menu-item a:hover,
   nav[role="navigation"] ul li.current-page-ancestor:hover,
   body.notebook nav[role="navigation"] ul li.menu-item-6512 a:hover,
   body.home nav[role="navigation"] ul li.menu-item-6512 a:hover,
   body.work nav[role="navigation"] ul li.menu-item-6167 a:hover {
-
+    // &:after {
+    //     background-color: $orange;
+    // }   
   }
 
 /* $[Header Animation] ^navigation, ^menu ==================================================================== */
 /* @media {  
 } screen and (min-width: 600px) */
 @media screen and (min-width: 37.5em) { 
+  .menu-overlay {
+    opacity: 1;
+    background-color: rgba($black,0.75);
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index: 99;
+  }
   nav[role="navigation"] {
   }
   nav[role="navigation"] ul {
@@ -322,19 +345,17 @@ nav[role="navigation"] ul {
       }
     nav[role="navigation"] ul li a:after {
         content: "";
-        background-color: $lightGray;
+        background-color: rgba($headerTextColor,0);
         position: absolute;
-        bottom: 0;
-        right: -1px;
-        left: -1px;
+        bottom: 10px;
+        right: 250px;
+        left: 250px;
         height: 1px;
         @include transition(all 0.125s ease-in-out);
-        z-index: -1;
-        opacity: 0;
     }
     nav[role="navigation"] ul li a:hover::after {
-        opacity: 1;
-        height: 100%;
+        right: 225px;
+        left: 225px;
         background-color: $orange;
     }
   .logo-img,

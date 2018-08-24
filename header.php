@@ -17,7 +17,7 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandl
   </head>
   
 <body <?php echo mm_body_class(); ?> lang="en">
-<header id="header" role="banner">
+<header id="header" role="banner" class="primary-header">
     <?php get_template_part( 'components/header/site', 'branding' ); ?>
     <button type="button" class="nav-toggle"><span>Menu</span></button>
 </header>
