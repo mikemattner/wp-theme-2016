@@ -13,8 +13,7 @@ html {
   }
 }
 .normal,
-h4,
-h3 {
+h4 {
     font-size: 1em;
     //line-height: 1.5em;
 }
@@ -32,6 +31,7 @@ h2 {
     margin-bottom: 0.46153846153846156em
 }
 h3 {
+    font-size: 1.25em;
     margin: 3em 0 1.5em
 }
 .small,
@@ -94,6 +94,10 @@ h6 {
     font-family: $sans-serif-font;
     line-height:1;
     letter-spacing: .06em;
+
+    &.multi-line {
+      line-height: calc(1.2em + 0.5vw);
+    }
 }
 strong {
     font-weight: 700
@@ -144,4 +148,40 @@ div.code code  {
 }
 pre {
   margin:0;
+}
+@media screen and (max-width: 768px) { 
+  .dt-break {
+    display:none;
+  }
+}
+.no-top-margin {
+  margin-top:0;
+}
+.exp_header {
+  font-weight: 100;
+  font-size: 0.75rem;
+  color: $textColor;
+  margin-bottom: 0.5rem;
+
+  &:after {
+    content: "";
+    width: 20px;
+    margin-left: 0;
+    margin-right: 90%;
+    border-top: 1px solid $orange;
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
+.exp_list {
+  font-size: 0.75rem;
+  padding:0;
+  margin-left:0;
+  margin-right:0;
+  list-style: none;
+  
+  li {
+    padding: 0;
+    margin: 0;
+  }
 }

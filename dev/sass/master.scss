@@ -1,13 +1,13 @@
 // Mixins,variables,resets,basics,typography
-@import "partials/mixins";
-@import "partials/variables";
-@import "partials/normalize";
-@import "partials/reset";
-@import "partials/fluid-media";
-@import "partials/fonts";
-@import "partials/typography";
-@import "partials/defaults";
-@import "partials/animations";
+@import "utils/mixins";
+@import "utils/variables";
+@import "utils/normalize";
+@import "utils/reset";
+@import "utils/fluid-media";
+@import "utils/fonts";
+@import "utils/typography";
+@import "utils/defaults";
+@import "utils/animations";
 
 // lity, highlight
 @import "vendor/lity";
@@ -15,9 +15,9 @@
 
 // grid,defaults
 @import "layout/grid";
-@import "partials/defaults";
-@import "partials/buttons";
-@import "partials/links";
+@import "utils/defaults";
+@import "utils/buttons";
+@import "utils/links";
 
 // header,footer
 @import "layout/header";

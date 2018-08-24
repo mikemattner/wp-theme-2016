@@ -1,35 +1,23 @@
 var $j = jQuery.noConflict();
 
-/*window.onscroll = function() {
-    var doc = document.documentElement;
-    var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
-    var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-    var body = document.getElementsByTagName("body");
-    
-    if(!body[0].classList.contains('nav-open')) {
-        localStorage.scrollLeft = left;
-        localStorage.scrollTop = top;
-    }
-
-    var scrollLeft = localStorage.getItem("scrollLeft");
-    var scrollTop = localStorage.getItem("scrollTop");
-}*/
-
 document.querySelector('.nav-toggle').onclick = function (e) {
   var nav = document.getElementById('site-navigation');
   var header = document.getElementById('header');
   var body = document.getElementsByTagName("body");
+  var overlay = '<div class="menu-overlay"></div>';
+
+  // if($j('.menu-overlay').length) {
+  //   $j('.menu-overlay').remove();
+  // } else {
+  //   $j('body').prepend(overlay);
+  // }
 
   body[0].classList.toggle('nav-open');
   nav.classList.toggle('show');
   header.classList.toggle('nav-open');
   this.classList.toggle('show');
 
-  /*if(!body[0].classList.contains('nav-open')) {
-    var scrollLeft = localStorage.getItem("scrollLeft");
-    var scrollTop = localStorage.getItem("scrollTop");
-    window.scrollTo(scrollLeft, scrollTop);
-  }*/
+
 
   e.preventDefault();
 }
@@ -80,56 +68,22 @@ $j(document).ready(function() {
 
 });
 
-/*=====================================
-Menubar animations
-=====================================
-var cbpAnimatedHeader = (function() {
-
-  var docElem = document.documentElement,
-    header = document.querySelector('.cbp-af-header'),
-    didScroll = false,
-    changeHeaderOn = 150;
-
-  function init() {
-    window.addEventListener('scroll', function(event) {
-      if (!didScroll) {
-        didScroll = true;
-        setTimeout(scrollPage, 50);
-      }
-    }, false);
-  }
-
-  function scrollPage() {
-    var sy = scrollY();
-    if (sy >= changeHeaderOn) {
-      classie.add(header, 'cbp-af-header-shrink');
-    } else {
-      classie.remove(header, 'cbp-af-header-shrink');
-    }
-    didScroll = false;
-  }
-
-  function scrollY() {
-    return window.pageYOffset || docElem.scrollTop;
-  }
-
-  init();
-
-})();*/
-
-
 /*==========================================
 Hide menubar when scrolled past a certain point
 ==========================================*/
-/*var didScroll;
+var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = 400;
+var headerPresent;
 
 // on scroll, let the interval function know the user has scrolled
 $j(window).scroll(function(event) {
   didScroll = true;
 });
+if($j('#page_header').length) {
+  headerPresent = true;
+}
 // run hasScrolled() and reset didScroll status
 setInterval(function() {
   if (didScroll) {
@@ -146,25 +100,23 @@ function hasScrolled() {
   if (Math.abs(lastScrollTop - st) <= delta)
     return;
 
-  // If they scrolled down and are past the navbar, add class .nav-up.
-  // This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
-    $j('.cbp-af-header').removeClass('nav-down').addClass('nav-up');
+      $j('.primary-header').removeClass('nav-down').addClass('nav-up');
   } else {
     // Scroll Up
     if (st + $j(window).height() < $j(document).height()) {
-      $j('.cbp-af-header').removeClass('nav-up').addClass('nav-down');
+      $j('.primary-header').removeClass('nav-up').addClass('nav-down');
     }
   }
 
   lastScrollTop = st;
 
-}*/
+}
 
 /*=====================================
 Parralaxin
-=====================================
+=====================================*/
 function mm_scroll_actions() {
     
     var scrolltop = $j(window).scrollTop(), 
@@ -185,4 +137,4 @@ function mm_scroll_actions() {
 
 $j(window).scroll(function() {
         mm_scroll_actions();
-});*/
+});

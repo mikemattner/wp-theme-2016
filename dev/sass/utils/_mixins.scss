@@ -175,9 +175,9 @@
   }
   }
 
-@mixin cover-background {
+@mixin cover-background($position: center) {
   @include absolute-center;
-  @include object-fit(cover);
+  @include object-fit(cover, $position);
   z-index: -1;
   width: 100%;
   height: 100%;

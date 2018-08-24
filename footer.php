@@ -9,7 +9,7 @@
       <a href="<?php echo home_url( '/' ); ?>archives" class="btn_master-archive">View Archives</a>
     </section>
     <section class="lower">
-      <p class="hire_me">Mike is a designer and front end dev.<br /> Drop a line at <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.
+      <p class="hire_me">Mike is a designer and front end developer.<br /> Drop a line at <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.
       <?php /*<section class="social_links">
           <ul>
             <li>
