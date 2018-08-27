@@ -58,29 +58,117 @@
     position: relative;
     @include css3-prefix(box-sizing, border-box);
     
-    
+    &-1 {
+      width: 8.33%;
+      &-offset {
+        margin-left:8.33%;
+       }
+    }
+    &-2 {
+      width: 16.66%;
+      &-offset {
+        margin-left:16.66%;
+       }
+    }
+    &-3 {
+      width: 25%;
+      &-offset {
+        margin-left:25%;
+       }
+    }
+    &-4 {
+      width: 33.33%;
+      &-offset {
+        margin-left:33.33%;
+       }
+    }
+    &-5 {
+      width: 41.66%;
+      &-offset {
+        margin-left:41.66%;
+       }
+    }
+    &-6 {
+      width: 50%;
+      &-offset {
+        margin-left:50%;
+       }
+    }
+    &-7 {
+      width: 58.33%;
+      &-offset {
+        margin-left:58.33%;
+       }
+    }
+    &-8 {
+      width: 66.66%;
+      &-offset {
+        margin-left:66.66%;
+       }
+    }
+    &-9 {
+      width: 75%;
+      &-offset {
+        margin-left:75%;
+       }
+    }
+    &-10 {
+      width: 83.33%;
+      &-offset {
+        margin-left:83.33%;
+       }
+    }
+    &-11 {
+      width: 91.66%;
+      &-offset {
+        margin-left:91.66%;
+       }
+    }
+    &-12 {
+      width: 100%;
+    }
 
     &.full {
        width:100%;
     }
     &.half {
        width:50%;
+
+       &-offset {
+        margin-left:50%;
+       }
     }
     
     &.one_quarter {
        width:25%;
+       
+       &-offset {
+        margin-left:25%;
+       }
     }
 
     &.three_quarters {
        width:75%;
+
+       &-offset {
+        margin-left:75%;
+       }
     }
 
     &.one_third {
        width:33.33%;
+
+       &-offset {
+        margin-left:33.33%;
+       }
     }
 
     &.two_thirds {
        width:67%;
+
+       &-offset {
+        margin-left:67%;
+       }
     }
   }
 

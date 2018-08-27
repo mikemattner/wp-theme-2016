@@ -21,7 +21,7 @@ get_header(); ?>
 			<article class="clearfix">
                 <?php smart_archives(); ?>
 			</article>
-      <hr />
+      <!-- <hr />
       <article>
         <div class="wrapper tag_list clearfix">
           <section>
@@ -31,7 +31,7 @@ get_header(); ?>
             <?php get_my_tags(64); ?>
           </section>
         </div>
-      </article>
+      </article> -->
 <?php endif; ?>
 <?php get_footer(); ?>
 
