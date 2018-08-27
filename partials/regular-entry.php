@@ -1,4 +1,4 @@
-        <article class="entry<?php if(is_single()){ echo ' single'; } else { echo $odd; } ?>">
+        <article class="entry<?php if(is_single()){ echo ' single'; } ?>">
           <header>
             <?php get_template_part( 'components/blog/post', 'header-meta' ); ?>
             <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>

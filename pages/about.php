@@ -25,9 +25,12 @@ get_header(); ?>
                   I love the web and all of the opportunities it affords in in marketing, but lately I've been developing an interest in creating tools for daily use.</p>
                   <p>Interactive work gives me the opportunity to design build products that are used by thousands daily&mdash;and those products continue to evolve based
                   on any data we gather. How cool is that?</p>
-                  <div class="row">
+                  <h4>Contact</h4>
+                  <p>If you have any questions or comments about this site I encourage you to <a href="mailto:hello@mikemattner.com">reach out</a>. If you have a work inquiry,
+                  I'm tentatively available for short-term freelance work.</p>
+                  <!-- <div class="row">
                       <div class="col one_third">
-                        <h4>Clients</h4>
+                        <h5>Clients</h5>
                         <ul class="exp_list">
                           <li>CRAFTSMAN<sup>&reg;</sup></li>
                           <li>Whirlpool<sup>&reg;</sup></li>
@@ -42,7 +45,7 @@ get_header(); ?>
                         </ul>
                       </div>
                       <div class="col one_third">
-                        <h4>Skills</h4>
+                        <h5>Skills</h5>
                         <ul class="exp_list">
                           <li>Front end development</li>
                           <li>WordPress development</li>
@@ -54,7 +57,7 @@ get_header(); ?>
                         </ul>
                       </div>
                       <div class="col one_third">
-                        <h4>Languages</h4>
+                        <h5>Languages</h5>
                         <ul class="exp_list">
                           <li>html/css/sass</li>
                           <li>javascript (ES6)</li>
@@ -62,7 +65,7 @@ get_header(); ?>
                           <li>MySQL</li>
                         </ul>
                       </div>
-                  </div>
+                  </div> -->
               </div>
               
             </div>
@@ -71,17 +74,14 @@ get_header(); ?>
             <div class="row">
               <div class="col two_thirds">
                   <h2 class="exp_header">Personal</h2>
-                  <h3 class="multi-line no-top-margin">In my personal life, I still enjoy creating, but I also love to read.</h3>
-                  <p>History, science, and politics have always been a part of my life &mdash; at one time I considered becoming a teacher and a politician&mdash; but I was bitten by the designer and developer bug. 
-                  In spite of the shift in focus, I still love those subjects and spend plenty of time learning.</p>
+                  <h3 class="multi-line no-top-margin">In my personal life, I enjoy creating<br class="dt-break"> &amp; learning.</h3>
                   <p>While buying my first home as a fixer upper, I learned that wood working and home renovation was something I thoroughly enjoyed. The jury is still out on whether I'm any good at it, though!</p>
+                  <p>In terms of learning, there is never a reason to stop. History, science, and politics have always been a part of my life &mdash; at one time I considered becoming a teacher and a politician&mdash; but I was bitten by the designer and developer bug. 
+                  In spite of the shift in focus, I still love those subjects and spend plenty of time reading.</p>
                   <p>I live in Michigan with my wife, dog, and three cats.</p>
                   <h4>This Website</h4>
                   <p>This site was built using HTML, CSS, PHP, Sass, and a mix of JavaScript. I use gulp for task automation, and the backend is powered by WordPress.</p>
               </div>
-              <div class="col one_third">
-
-              </div> 
             </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-        <article class="images<?php echo $odd;?>">
+        <article class="images">
           <?php get_template_part( 'components/blog/post', 'header-meta' ); ?>
           <section class="lightbox">  
             <header>

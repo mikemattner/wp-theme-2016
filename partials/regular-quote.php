@@ -1,4 +1,4 @@
-    <article class="quote<?php if(is_single()){ echo ' single'; } else { echo $odd; } ?>">
+    <article class="quote<?php if(is_single()){ echo ' single'; } ?>">
         <header>
             <?php get_template_part( 'components/blog/post', 'header-meta' ); ?>
         </header>

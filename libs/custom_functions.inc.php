@@ -50,23 +50,6 @@ function listCats() {
   }
   
   foreach ($categories as $cat) {
-
-    /*
-    switch ($cat->cat_ID) {
-        case 3: //Entry
-            $icon = '<i class="fa fa-file-text"></i>';
-            break;
-        case 4: //Links
-            $icon = '<i class="fa fa-dot-circle-o"></i>';
-            break;
-        case 5: //Quotes
-            $icon = '<i class="fa fa-quote-left"></i>';
-            break;
-        case 557: //Images
-            $icon = '<i class="fa fa-camera"></i>';
-            break;
-      }
-      */
             echo '<li><a href="'.$url.'/'.$cat_base.'/'.$cat->category_nicename.'/">'.$cat->cat_name.'</span></a></li>'; //<span style="width: '.$tag_width.'%">
 
   }
@@ -77,8 +60,6 @@ function listCats() {
 if(!function_exists('how_long_ago')){
   function how_long_ago($timestamp){
             $difference = (time() - 18000) - $timestamp;
-			
-			
 
             if($difference >= 60*60*24*365){        // if more than a year ago
                 $int = intval($difference / (60*60*24*365));
