@@ -71,48 +71,53 @@ $j(document).ready(function() {
 /*==========================================
 Hide menubar when scrolled past a certain point
 ==========================================*/
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = 400;
-var headerPresent;
+// var didScroll;
+// var lastScrollTop = 0;
+// var delta = 5;
+// var navbarHeight = 400;
+// var headerPresent = false;
 
-// on scroll, let the interval function know the user has scrolled
-$j(window).scroll(function(event) {
-  didScroll = true;
-});
-if($j('#page_header').length) {
-  headerPresent = true;
-}
-// run hasScrolled() and reset didScroll status
-setInterval(function() {
-  if (didScroll) {
-    hasScrolled();
-    didScroll = false;
-  }
-}, 250);
+// // on scroll, let the interval function know the user has scrolled
+// $j(window).scroll(function(event) {
+//   didScroll = true;
+// });
+// // run hasScrolled() and reset didScroll status
+// setInterval(function() {
+//   if (didScroll) {
+//     hasScrolled();
+//     didScroll = false;
+//     if($j('body.nav-open').length) {
+//       headerPresent = true;
+//     } else {
+//       headerPresent = false;
+//     }
+//   }
+// }, 250);
 
-function hasScrolled() {
+// function hasScrolled() {
 
-  var st = $j(this).scrollTop();
+//   var st = $j(this).scrollTop();
+//   console.log(headerPresent);
 
-  // Make sure they scroll more than delta
-  if (Math.abs(lastScrollTop - st) <= delta)
-    return;
+//   // Make sure they scroll more than delta
+//   if (Math.abs(lastScrollTop - st) <= delta)
+//     return;
 
-  if (st > lastScrollTop && st > navbarHeight) {
-    // Scroll Down
-      $j('.primary-header').removeClass('nav-down').addClass('nav-up');
-  } else {
-    // Scroll Up
-    if (st + $j(window).height() < $j(document).height()) {
-      $j('.primary-header').removeClass('nav-up').addClass('nav-down');
-    }
-  }
+//   if(!headerPresent) {
+//     if (st > lastScrollTop && st > navbarHeight) {
+//       // Scroll Down
+//         $j('.primary-header').removeClass('nav-down').addClass('nav-up');
+//     } else {
+//       // Scroll Up
+//       if (st + $j(window).height() < $j(document).height()) {
+//         $j('.primary-header').removeClass('nav-up').addClass('nav-down');
+//       }
+//     }
+//   }
 
-  lastScrollTop = st;
+//   lastScrollTop = st;
 
-}
+// }
 
 /*=====================================
 Parralaxin

@@ -1,0 +1,72 @@
+.section__about {
+    .personal-image {
+      margin: 0 0 1.5rem;
+      box-shadow: 0 0 25px rgba($darkBlue, 0.25);
+      border-radius:2px;
+      overflow:hidden;
+      position:relative;
+      @include transition(all .25s ease-in-out);
+      
+      @media screen and (min-width: 48em) {
+        float: left;
+        width: 50%;
+        margin-left: -33%;
+        margin-right: 2rem;
+      }
+
+      .caption {
+        position: absolute;
+        font-size: 0.75rem;
+        margin: 0;
+        color: $white;
+        font-family: $sans-serif-font;
+        font-weight: 700;
+        letter-spacing: 0.0675em;
+        line-height: 1;
+        bottom: 0;
+        right: 0;
+        padding: 1em;
+        @include transition(all .25s cubic-bezier(0.165,0.84,0.44,1));
+      }
+
+      &:hover {
+        box-shadow: 0 5px 25px rgba($darkBlue, 0.5);
+
+        .caption {
+            @include transform(scale(1.1));
+        }
+      }
+
+    }
+    .no-top-margin {
+      margin-top:0;
+    }
+    .exp_header {
+      font-weight: 100;
+      font-size: 0.75rem;
+      color: $textColor;
+      margin-bottom: 0.5rem;
+
+      &:after {
+        content: "";
+        width: 20px;
+        margin-left: 0;
+        margin-right: 90%;
+        border-top: 1px solid $orange;
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+    .exp_list {
+      font-size: 0.75rem;
+      padding:0;
+      margin-left:0;
+      margin-right:0;
+      list-style: none;
+      
+      li {
+        padding: 0;
+        margin: 0;
+      }
+    }
+}

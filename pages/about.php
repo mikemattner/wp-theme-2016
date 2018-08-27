@@ -11,19 +11,20 @@ get_header(); ?>
                 </div>
             </div>
       </div>
-      <section>
+      <section class="section__about">
         <div class="grid-container">
             <div class="row">
-              <div class="col one_third">
+              <div class="col two_thirds one_third-offset">
+                  <h2 class="exp_header">Professional</h2>
+                  <h3 class="multi-line no-top-margin">I'm a multi disciplinary designer &amp; developer with over 12-years of experience in advertising and marketing.</h3>
                   <div class="personal-image">
                     <img src="http://www.mikemattner.com/wp-content/uploads/2018/08/IMG_2502.jpg" alt="My ridiculous face." />
                     <div class="caption">Hey there.</div>
                   </div>
-              </div>
-              <div class="col two_thirds">
-                  <h2 class="exp_header">Professional</h2>
-                  <h3 class="multi-line no-top-margin">I'm a multi disciplinary designer &amp; developer with over 12-years of experience in advertising and marketing.</h3>
-                  <p>I love interactive work because I get to build functional, well-designed pieces that are used by thousands daily. In other cases, I help work on projects that benefit the local community through better communication and outreach.</p>
+                  <p>I've spent the past 12 years designing and developing materials for multiple organizations and purposes, but largely related to consumer goods. 
+                  I love the web and all of the opportunities it affords in in marketing, but lately I've been developing an interest in creating tools for daily use.</p>
+                  <p>Interactive work gives me the opportunity to design build products that are used by thousands daily&mdash;and those products continue to evolve based
+                  on any data we gather. How cool is that?</p>
                   <div class="row">
                       <div class="col one_third">
                         <h4>Clients</h4>
@@ -70,12 +71,13 @@ get_header(); ?>
             <div class="row">
               <div class="col two_thirds">
                   <h2 class="exp_header">Personal</h2>
-                  <h3 class="multi-line no-top-margin">When I'm not working, I still enjoy creating&mdash;but usually they're physical objects.</h3>
-                  <p>I live in Michigan with my wife, dog, and three cats. We're constantly on the edge of chaos in this house, but I love them all.</p>
-                  <p>I'm first and foremost a lifelong student&mdash;of history, of science, and politics&mdash;and I spend far too much time reading.</p>
-                  <p>Beyond that, I enjoy wood working, house renovations, and a nice relaxing day at the beach.
+                  <h3 class="multi-line no-top-margin">In my personal life, I still enjoy creating, but I also love to read.</h3>
+                  <p>History, science, and politics have always been a part of my life &mdash; at one time I considered becoming a teacher and a politician&mdash; but I was bitten by the designer and developer bug. 
+                  In spite of the shift in focus, I still love those subjects and spend plenty of time learning.</p>
+                  <p>While buying my first home as a fixer upper, I learned that wood working and home renovation was something I thoroughly enjoyed. The jury is still out on whether I'm any good at it, though!</p>
+                  <p>I live in Michigan with my wife, dog, and three cats.</p>
                   <h4>This Website</h4>
-                  <p>This site was built using HTML, CSS, PHP, Sass, and a mix of JavaScript. I use Grunt for task automation, and the backend is powered by WordPress.</p>
+                  <p>This site was built using HTML, CSS, PHP, Sass, and a mix of JavaScript. I use gulp for task automation, and the backend is powered by WordPress.</p>
               </div>
               <div class="col one_third">
 
