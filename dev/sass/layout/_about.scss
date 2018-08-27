@@ -26,11 +26,17 @@
         bottom: 0;
         right: 0;
         padding: 1em;
-        @include transition(all .25s cubic-bezier(0.165,0.84,0.44,1));
+        @include transition(all .25s ease-in-out);
       }
-
+      img{
+        @include transition(all .25s ease-in-out);
+      }
       &:hover {
         box-shadow: 0 5px 25px rgba($darkBlue, 0.5);
+
+        img {
+          @include transform(scale(1.015));
+        }
 
         .caption {
             @include transform(scale(1.1));

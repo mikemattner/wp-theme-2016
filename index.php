@@ -3,7 +3,7 @@
 Template Name: notebook
 */
 get_header(); ?>
-<?php query_posts($query_string . '&cat=-93,-549'); ?>    
+<?php /*query_posts($query_string . '&cat=-93,-549');*/ ?>    
 <?php if (have_posts()) : ?>
   <?php $n = 0; ?>
   <?php while (have_posts()) : the_post(); ?>

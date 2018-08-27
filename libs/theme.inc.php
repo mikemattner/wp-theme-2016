@@ -76,16 +76,16 @@ function mm_register_sidebars() {
 } // don't remove this bracket!
 
 /************* COMMENT FILTER *********************/	
-add_filter('get_comments_number', 'comment_count', 0);
-function comment_count( $count ) {
-    if ( ! is_admin() ) {
-        global $id;
-        $comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
-        return count($comments_by_type['comment']);
-    } else {
-        return $count;
-    }
-}
+// add_filter('get_comments_number', 'comment_count', 0);
+// function comment_count( $count ) {
+//     if ( ! is_admin() ) {
+//         global $id;
+//         $comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+//         return count($comments_by_type['comment']);
+//     } else {
+//         return $count;
+//     }
+// }
 
 /************* COMMENT LAYOUT *********************/
 function mytheme_comment($comment, $args, $depth) {
@@ -130,16 +130,12 @@ function mm_content_class() {
 
     $i = true;
     switch($i) {
-        /*case (is_home()):
-            $classes = ' class="home"';
-        break;
-
-        case (is_single() && (get_post_format() === false)):
-            $classes = '';
-        break;*/
-
         case (is_single()):
             $classes = ' class="single"';
+        break;
+
+        default:
+            $classes = '';
         break;
     }
     echo $classes;

@@ -1,5 +1,5 @@
 
-    <article class="link<?php if(is_single()){ echo ' single'; } else { echo $odd; } ?>">
+    <article class="link<?php if(is_single()){ echo ' single'; } ?>">
           <header>
             <?php get_template_part( 'components/blog/post', 'header-meta' ); ?>
             <?php if(has_ref_link()) { ?>
