@@ -6,9 +6,9 @@
  * @version 2.0
  */
 
-require_once 'libs/theme.inc.php';                      //Sidebars, Custom Menus, Comments
-require_once 'libs/wordpress_function_updates.inc.php'; //Customizing core Wordpress functions
-require_once 'libs/custom_functions.inc.php';           //Adding in a few custom functions
+require_once 'libs/theme.inc.php';                 // Styles, Scripts, Sidebars, Custom Menus, Comments
+require_once 'libs/posts_links.inc.php';           // Custom post links on archive/single pages
+require_once 'libs/custom_functions.inc.php';      // Adding in a few custom functions
 
 
 // Adding theme items.
@@ -23,50 +23,9 @@ add_action( 'wp_head', 'mm_ext' );                            // theme extras
 /*************************************************************************************************************/
 
 
-// loading our js, jquery, and reply elements on single pages automatically
-function mm_queue_js() {
-  if ( !is_admin() ) {
-
-    //adding scripts file in the footer
-    //Unminified for testing
-    //wp_register_script( 'mm-js', get_template_directory_uri() . '/dev/js/build/production.js', array( 'jquery' ), '2013-02-14-1537', true );
-
-    //Production JavaScript
-    wp_register_script( 'mm-js', get_template_directory_uri() . '/assets/js/production.min.js', array( 'jquery' ), '2013-02-14-1537', true );
-    wp_enqueue_script( 'mm-js' );
-
-    //enqueu comment-reply script
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-      wp_deregister_script( 'comment-reply' );
-      wp_register_script( 'comment-reply', get_site_url() . '/wp-includes/js/comment-reply.js', array( 'jquery' ), null, true );
-      wp_enqueue_script( 'comment-reply' );
-    }
-  }
-
-}
-
-//load our styles
-function mm_queue_css() {
-  if ( !is_admin() ) {
-    // register stylesheet
-    wp_register_style( 'mm-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Slab:300,700', array(), '', 'all' );
-    wp_enqueue_style( 'mm-google-fonts' );
-    wp_register_style( 'mm-css', get_template_directory_uri() . '/assets/css/production.min.css', array(), '2017-06-19T15:38', 'all' );
-    wp_enqueue_style( 'mm-css' );
-  }
-}
-
-
 //Loading TypeKit and Google Analytics
 function mm_ext() {
-  //mm_typekit();
   mm_google_analytics();
-}
-
-//TypeKit Javascript
-function mm_typekit() {
-  echo '<script src="https://use.typekit.net/sie8fvr.js"></script>';
-  echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
 }
 
 //Google Analytics
@@ -95,9 +54,11 @@ function mm_head_cleanup() {
   remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );             // start link
   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for Adjacent Posts
   remove_action( 'wp_head', 'wp_generator' );                           // WP version
-  wp_deregister_script( 'wp-embed' );                                       //WP Embed Removal
-
-  // all actions related to emojis
+  if ( !is_admin() ) {
+    wp_deregister_script( 'wp-embed' );                                    //WP Embed Removal
+  }
+  
+  // // all actions related to emojis
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
   remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -120,26 +81,3 @@ function disable_emojicons_tinymce( $plugins ) {
 
 // remove WP version from RSS
 function mm_rss_version() { return ''; }
-
-function mmTags() { 
-  if( $tags = get_the_tags() ) {
-      echo '<span class="tags">';
-      foreach( $tags as $tag ) {
-          $sep = ( $tag === end( $tags ) ) ? '' : ', ';
-          echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
-      }
-      echo '</span>';
-  }
-}
-
-function mmPaged() {
-  global $paged, $wp_query;
-  $max_page = $wp_query->max_num_pages;
-  if ( $paged > 1 ) { 
-    $output = 'Page ' . $paged . " of " . $max_page; 
-  } else {
-    $output = 'Page ' . '1 of ' . $max_page;
-  }
-
-  return $output;
-}
