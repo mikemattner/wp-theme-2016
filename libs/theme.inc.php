@@ -4,6 +4,38 @@
  * @version 2.0
  */
 
+// loading our js, jquery, and reply elements on single pages automatically
+function mm_queue_js() {
+  if ( !is_admin() ) {
+
+    //adding scripts file in the footer
+    //Unminified for testing
+    //wp_register_script( 'mm-js', get_template_directory_uri() . '/dev/js/build/production.js', array( 'jquery' ), '2013-02-14-1537', true );
+
+    //Production JavaScript
+    wp_register_script( 'mm-js', get_template_directory_uri() . '/assets/js/production.min.js', array( 'jquery' ), '2013-02-14-1537', true );
+    wp_enqueue_script( 'mm-js' );
+
+    //enqueu comment-reply script
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_deregister_script( 'comment-reply' );
+      wp_register_script( 'comment-reply', get_site_url() . '/wp-includes/js/comment-reply.js', array( 'jquery' ), null, true );
+      wp_enqueue_script( 'comment-reply' );
+    }
+  }
+
+}
+
+//load our styles
+function mm_queue_css() {
+  if ( !is_admin() ) {
+    // register stylesheet
+    wp_register_style( 'mm-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Slab:300,700', array(), '', 'all' );
+    wp_enqueue_style( 'mm-google-fonts' );
+    wp_register_style( 'mm-css', get_template_directory_uri() . '/assets/css/production.min.css', array(), '2017-06-19T15:38', 'all' );
+    wp_enqueue_style( 'mm-css' );
+  }
+}
 
 // Adding WP 3+ Functions & Theme Support
 function mm_theme_support() {
@@ -169,4 +201,28 @@ function mm_portfolio_navigation(){
     new_previous_post_link('%link','', TRUE, $classcall='prev');
     new_next_post_link('%link','', TRUE, $classcall='next');
 }
+
+function mmTags() { 
+  if( $tags = get_the_tags() ) {
+      echo '<span class="tags">';
+      foreach( $tags as $tag ) {
+          $sep = ( $tag === end( $tags ) ) ? '' : ', ';
+          echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+      }
+      echo '</span>';
+  }
+}
+
+function mmPaged() {
+  global $paged, $wp_query;
+  $max_page = $wp_query->max_num_pages;
+  if ( $paged > 1 ) { 
+    $output = 'Page ' . $paged . " of " . $max_page; 
+  } else {
+    $output = 'Page ' . '1 of ' . $max_page;
+  }
+
+  return $output;
+}
+
 ?>
