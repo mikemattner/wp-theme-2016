@@ -18,13 +18,13 @@ add_action( 'widgets_init', 'mm_register_sidebars' );         // register sideba
 add_action( 'after_setup_theme', 'mm_theme_support' );       // launching this stuff after theme setup
 add_action( 'wp_enqueue_scripts', 'mm_queue_js', 1 );         // enqueue base scripts
 add_action( 'wp_enqueue_scripts', 'mm_queue_css', 999 );      // enqueue base styles
-add_action( 'wp_head', 'mm_ext' );                            // theme extras
+add_action( 'wp_head', 'mm_header_scripts' );                            // theme extras
 
 /*************************************************************************************************************/
 
 
-//Loading TypeKit and Google Analytics
-function mm_ext() {
+//Loading Google Analytics
+function mm_header_scripts() {
   mm_google_analytics();
 }
 

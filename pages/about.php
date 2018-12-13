@@ -72,7 +72,7 @@ get_header(); ?>
         </div>
         <div class="grid-container">
             <div class="row">
-              <div class="col two_thirds">
+              <div class="col two_thirds one_third-offset">
                   <h2 class="exp_header">Personal</h2>
                   <h3 class="multi-line no-top-margin">In my personal life, I enjoy creating<br class="dt-break"> &amp; learning.</h3>
                   <p>While buying my first home as a fixer upper, I learned that wood working and home renovation was something I thoroughly enjoyed. The jury is still out on whether I'm any good at it, though!</p>

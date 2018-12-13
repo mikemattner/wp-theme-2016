@@ -130,7 +130,7 @@ function mytheme_comment($comment, $args, $depth) {
            </div>
            <p class="comment_author"><?php comment_author_link() ?></p>
            <p class="comment_date"><a href="#comment-<?php comment_ID() ?>"><?php if(!function_exists('how_long_ago')){comment_date() . ' @ ' . comment_time(); } else { echo how_long_ago(get_comment_time('U')); } ?></a></p>
-	       <?php comment_text() ?>
+	         <?php comment_text() ?>
            <p class="reply small"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></p>
         </div>
      </div>
